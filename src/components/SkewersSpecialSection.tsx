@@ -78,6 +78,12 @@ export const SkewersSpecialSection: React.FC<SkewersSpecialSectionProps> = ({
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        const fallback = `${import.meta.env.BASE_URL}assets/images/mixed_grills_platter_1792665161760.jpg`;
+                        if (e.currentTarget.src !== fallback) {
+                          e.currentTarget.src = fallback;
+                        }
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
                     <span className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-md bg-amber-400 text-neutral-950 font-black text-xs">

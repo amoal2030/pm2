@@ -124,7 +124,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xl group">
               <img
-                src="./assets/images/broasted_chicken_hero_1792665160048.jpg"
+                src={`${import.meta.env.BASE_URL}assets/images/broasted_chicken_hero_1792665160048.jpg`}
                 alt={isAr ? 'بروستد مشوار الفرسان الذهبي المقرمش' : 'Golden Crispy Broasted Chicken'}
                 className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="eager"

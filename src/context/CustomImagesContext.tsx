@@ -131,7 +131,7 @@ export const CustomImagesProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
         // 3. User feedback
         const displayName = itemName ? `«${itemName}»` : 'الصنف';
-        showToast(`تم حفظ صورة ${displayName} تلقائياً بنجاح! 📸`, finalDataUrl, 'success');
+        showToast(`تم حفظ ونشر صورة ${displayName} كصورة عامة للجميع بنجاح! 🌐`, finalDataUrl, 'success');
         return true;
       } catch (err) {
         console.error('Failed to save custom image:', err);

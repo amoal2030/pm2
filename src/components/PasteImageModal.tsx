@@ -195,7 +195,7 @@ export const PasteImageModal: React.FC<PasteImageModalProps> = ({
             </div>
             <div>
               <h3 className="font-extrabold text-base text-slate-900 dark:text-white">
-                {isAr ? 'لصق صورة وحفظها تلقائياً' : 'Paste & Auto-Save Image'}
+                {isAr ? 'لصق صورة عامة للصنف (تظهر لجميع الزوار)' : 'Paste Public Image for Item (Visible to All)'}
               </h3>
               <p className="text-xs text-amber-600 dark:text-amber-400 font-bold mt-0.5">
                 {itemName}
@@ -314,7 +314,7 @@ export const PasteImageModal: React.FC<PasteImageModalProps> = ({
         <div className="p-3.5 sm:p-4 bg-slate-50 dark:bg-neutral-950 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs text-slate-500 dark:text-neutral-400">
           <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-bold">
             <Check className="w-4 h-4" />
-            <span>{isAr ? 'الحفظ يتم تلقائياً دون لمس ملفات جهازك' : 'Saves automatically without touching device files'}</span>
+            <span>{isAr ? 'يتم حفظ ونشر الصورة عامةً لجميع الزوار على كافة الأجهزة' : 'Image is saved and published publicly for all visitors'}</span>
           </div>
 
           <button

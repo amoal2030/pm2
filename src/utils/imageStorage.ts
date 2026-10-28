@@ -30,9 +30,31 @@ function openDB(): Promise<IDBDatabase> {
 }
 
 /**
- * Loads all saved custom images as a key-value record { [itemId]: dataUrl }
+ * Loads all saved public item images.
+ * First fetches from the public server API (visible to all users & devices).
+ * Falls back to local IndexedDB/localStorage if offline.
  */
 export async function loadAllCustomImages(): Promise<Record<string, string>> {
+  // 1. Try public server API first
+  try {
+    const res = await fetch('/api/item-images');
+    if (res.ok) {
+      const serverMap = await res.json();
+      if (serverMap && typeof serverMap === 'object') {
+        // Cache to local IndexedDB for fast offline startup
+        for (const [id, url] of Object.entries(serverMap)) {
+          if (typeof url === 'string') {
+            saveToLocalCache(id, url).catch(() => {});
+          }
+        }
+        return serverMap;
+      }
+    }
+  } catch {
+    // Server not reached, fallback to local cache
+  }
+
+  // 2. Fallback to IndexedDB / localStorage
   try {
     const db = await openDB();
     return new Promise((resolve) => {
@@ -60,37 +82,53 @@ export async function loadAllCustomImages(): Promise<Record<string, string>> {
   }
 }
 
-/**
- * Saves a custom image for a menu item into IndexedDB and localStorage fallback.
- */
-export async function saveCustomImageToDB(id: string, dataUrl: string, name?: string): Promise<void> {
+async function saveToLocalCache(id: string, dataUrl: string): Promise<void> {
   try {
     const db = await openDB();
-    await new Promise<void>((resolve, reject) => {
-      const transaction = db.transaction(STORE_NAME, 'readwrite');
-      const store = transaction.objectStore(STORE_NAME);
-      const request = store.put({
-        id,
-        dataUrl,
-        name: name || '',
-        updatedAt: Date.now(),
-      });
-
-      request.onsuccess = () => resolve();
-      request.onerror = () => reject(request.error);
-    });
+    const transaction = db.transaction(STORE_NAME, 'readwrite');
+    const store = transaction.objectStore(STORE_NAME);
+    store.put({ id, dataUrl, updatedAt: Date.now() });
   } catch {
-    // Fallback to localStorage
+    // Ignore
   }
-
-  // Backup in localStorage
   saveToLocalStorage(id, dataUrl);
 }
 
 /**
- * Deletes a custom image for a menu item.
+ * Saves a public item image:
+ * Sends to server API so it is published globally for all visitors,
+ * and caches locally for immediate responsive UI.
+ */
+export async function saveCustomImageToDB(id: string, dataUrl: string, name?: string): Promise<void> {
+  // 1. Save to server API (makes it public across all users & devices)
+  try {
+    await fetch('/api/item-images', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ itemId: id, dataUrl, name }),
+    });
+  } catch (err) {
+    console.warn('Could not sync image to public server API:', err);
+  }
+
+  // 2. Cache locally in IndexedDB & localStorage
+  await saveToLocalCache(id, dataUrl);
+}
+
+/**
+ * Deletes a public custom image for a menu item.
  */
 export async function deleteCustomImageFromDB(id: string): Promise<void> {
+  // 1. Remove from server API
+  try {
+    await fetch(`/api/item-images/${encodeURIComponent(id)}`, {
+      method: 'DELETE',
+    });
+  } catch {
+    // Ignore
+  }
+
+  // 2. Remove from local IndexedDB
   try {
     const db = await openDB();
     await new Promise<void>((resolve, reject) => {

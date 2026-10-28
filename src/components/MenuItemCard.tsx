@@ -120,14 +120,14 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
             </span>
           )}
 
-          {/* Custom Image Indicator */}
+          {/* Public Image Indicator */}
           {isCustom && (
             <span
-              title={isAr ? 'تم حفظ صورة مخصصة لهذا الصنف تلقائياً' : 'Custom photo saved'}
-              className="absolute bottom-2.5 end-2.5 px-2 py-0.5 rounded-md bg-emerald-500/90 text-neutral-950 text-[10px] font-black flex items-center gap-1 shadow-sm backdrop-blur-xs"
+              title={isAr ? 'صورة عامة منشورة وتظهر لجميع الزوار' : 'Public photo visible to all'}
+              className="absolute bottom-2.5 end-2.5 px-2 py-0.5 rounded-md bg-emerald-500/95 text-neutral-950 text-[10px] font-black flex items-center gap-1 shadow-sm backdrop-blur-xs"
             >
-              <span>🖼️</span>
-              <span>{isAr ? 'صورة خاصة' : 'Custom'}</span>
+              <span>🌐</span>
+              <span>{isAr ? 'صورة عامة' : 'Public'}</span>
             </span>
           )}
         </div>

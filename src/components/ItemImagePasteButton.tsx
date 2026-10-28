@@ -199,7 +199,7 @@ export const ItemImagePasteButton: React.FC<ItemImagePasteButtonProps> = ({
             ) : (
               <Clipboard className="w-4 h-4" />
             )}
-            <span>{isAr ? 'لصق صورة مباشرة (Ctrl+V أو رابط)' : 'Paste Image (Ctrl+V or URL)'}</span>
+            <span>{isAr ? 'لصق صورة عامة (Ctrl+V أو رابط)' : 'Paste Public Image (Ctrl+V or URL)'}</span>
           </button>
 
           {/* Device file upload as optional alternative */}
@@ -231,11 +231,11 @@ export const ItemImagePasteButton: React.FC<ItemImagePasteButtonProps> = ({
 
         <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-neutral-400 px-1">
           <span className="flex items-center gap-1">
-            <span>💡</span>
+            <span>🌐</span>
             <span>
               {isAr
-                ? 'انسخ أي صورة أو رابط صورة والصقها مباشرة دون الحاجة لتنزيلها على جهازك'
-                : 'Copy any photo or image link and paste directly without downloading to your device'}
+                ? 'يتم حفظ الصورة ونشرها كصورة عامة للمطعم تظهر لجميع الزوار على كافة الأجهزة'
+                : 'The image is saved and published publicly for all visitors across all devices'}
             </span>
           </span>
         </div>

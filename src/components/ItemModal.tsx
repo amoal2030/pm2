@@ -397,8 +397,8 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
 
           {isCustom && (
             <span className="absolute bottom-3 end-3 px-2.5 py-1 rounded-lg bg-emerald-500/95 text-neutral-950 text-xs font-black flex items-center gap-1 shadow-md">
-              <span>🖼️</span>
-              <span>{isAr ? 'صورة خاصة محفوظة' : 'Custom photo'}</span>
+              <span>🌐</span>
+              <span>{isAr ? 'صورة عامة منشورة' : 'Public photo'}</span>
             </span>
           )}
 
@@ -416,7 +416,7 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
             <div className="flex items-center justify-between">
               <span className="text-xs font-black text-slate-800 dark:text-neutral-200 flex items-center gap-1.5">
                 <Camera className="w-4 h-4 text-amber-500" />
-                <span>{isAr ? 'تغيير صورة الصنف (لصق وحفظ تلقائي)' : 'Change Item Photo (Paste & Auto-save)'}</span>
+                <span>{isAr ? 'تغيير صورة الصنف العامة (تظهر لجميع الزوار)' : 'Change Public Item Photo (Visible to all)'}</span>
               </span>
               <span className="text-[10px] bg-slate-200 dark:bg-neutral-700 text-slate-700 dark:text-neutral-300 px-2 py-0.5 rounded font-mono font-bold">
                 Ctrl + V

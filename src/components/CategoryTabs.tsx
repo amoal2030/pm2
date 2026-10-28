@@ -45,7 +45,7 @@ export const CategoryTabs: React.FC<CategoryTabsProps> = ({
   };
 
   return (
-    <div className="sticky top-20 z-30 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md border-y border-slate-200 dark:border-neutral-800 shadow-md py-2.5 transition-colors duration-200">
+    <div className="w-full bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md border-y border-slate-200 dark:border-neutral-800 shadow-md py-2.5 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center">
           {/* Right Scroll Arrow */}

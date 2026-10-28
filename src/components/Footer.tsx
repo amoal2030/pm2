@@ -13,14 +13,14 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="w-16 h-11 rounded-lg overflow-hidden shrink-0 shadow-md bg-white border border-slate-200 dark:border-neutral-800">
+              <div className="w-18 h-12 sm:w-20 sm:h-13 rounded-xl overflow-hidden shrink-0 shadow-sm bg-amber-400/10 p-0.5 border border-amber-300/80 dark:border-amber-500/30">
                 <img
                   src={RESTAURANT_INFO.logo}
                   alt={isAr ? RESTAURANT_INFO.name : RESTAURANT_INFO.nameEn}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-black text-slate-900 dark:text-white">
+              <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white">
                 {isAr ? RESTAURANT_INFO.name : RESTAURANT_INFO.nameEn}
               </h3>
             </div>

@@ -132,6 +132,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent" />
               
+              {/* Official Brand Stamp with Logo */}
+              <div className="absolute top-4 start-4 z-10 flex items-center gap-2 p-1.5 pe-3 rounded-xl bg-neutral-950/85 text-white text-xs font-black shadow-lg backdrop-blur-md border border-amber-500/30">
+                <div className="w-8 h-6 rounded-md overflow-hidden bg-amber-400/20 p-0.5 border border-amber-400/40 shrink-0">
+                  <img src={RESTAURANT_INFO.logo} alt="Logo" className="w-full h-full object-contain" />
+                </div>
+                <span className="text-amber-400">{isAr ? 'بروستد مشوار الفرسان' : 'Meshwar Al Forsan'}</span>
+              </div>
+
               {/* Overlay Badge */}
               <div className="absolute bottom-4 right-4 left-4 p-4 rounded-xl bg-neutral-950/85 backdrop-blur-md border border-neutral-800 text-start">
                 <div className="flex items-center justify-between">

@@ -71,7 +71,7 @@ export const CATEGORY_IMAGES: Record<CategoryId, string> = {
 
 export function getItemImage(item: MenuItem): string {
   if (item.image) return item.image;
-  return `${BASE}assets/images/items/${item.id}.jpg`;
+  return getCategoryFallback(item.category);
 }
 
 export function getCategoryFallback(categoryId: CategoryId): string {
@@ -395,8 +395,8 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-14',
-    name: 'ادام لحم',
-    nameEn: 'Meat Stew',
+    name: 'اوصال لحم',
+    nameEn: 'Meat Awsal',
     category: 'grilled',
     price: 34,
     calories: 412,

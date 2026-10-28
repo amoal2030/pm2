@@ -77,7 +77,7 @@ export const MenuSearchAndFilter: React.FC<MenuSearchAndFilterProps> = ({
 
       {/* Quick Filter Buttons & Results Count */}
       <div className="flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
-        <div className="flex flex-wrap items-center gap-1.5 p-1 bg-slate-100 dark:bg-neutral-900/90 rounded-xl border border-slate-200 dark:border-neutral-800 shadow-xs">
+        <div className="flex items-center gap-1.5 p-1 bg-slate-100 dark:bg-neutral-900/90 rounded-xl border border-slate-200 dark:border-neutral-800 shadow-xs overflow-x-auto no-scrollbar max-w-full">
           <button
             onClick={() => onQuickFilterChange('all')}
             className={`px-3 py-1.5 rounded-lg font-medium transition-colors cursor-pointer ${

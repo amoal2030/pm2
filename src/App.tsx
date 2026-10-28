@@ -13,6 +13,8 @@ import { Footer } from './components/Footer';
 import { CartProvider, useCart } from './context/CartContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
+import { CustomImagesProvider } from './context/CustomImagesContext';
+import { ImageSaveToast } from './components/ImageSaveToast';
 import { MENU_ITEMS, CATEGORIES, MenuItem, CategoryId } from './data/menuData';
 import { ArrowUp, UtensilsCrossed, Sparkles, Filter, ListCollapse } from 'lucide-react';
 
@@ -325,7 +327,7 @@ const MainContent: React.FC = () => {
       <Hero onExploreMenu={scrollToMenu} />
 
       {/* Sticky Category Navigation Bar in the Menu Area */}
-      <div id="menu" className="scroll-mt-10">
+      <div id="menu" className="sticky top-20 z-30 scroll-mt-20">
         <CategoryTabs
           activeCategory={activeCategory}
           onSelectCategory={handleSelectCategory}
@@ -642,6 +644,9 @@ const MainContent: React.FC = () => {
       {/* Floating Bottom Selection Bar matching user's reference */}
       <BottomSelectionBar />
 
+      {/* Automatic Image Save Floating Notification */}
+      <ImageSaveToast />
+
       {/* Back to Top Floating Button - strictly takes user to top ONLY when clicked */}
       {showBackToTop && (
         <button
@@ -667,7 +672,9 @@ export default function App() {
     <LanguageProvider>
       <ThemeProvider>
         <CartProvider>
-          <MainContent />
+          <CustomImagesProvider>
+            <MainContent />
+          </CustomImagesProvider>
         </CartProvider>
       </ThemeProvider>
     </LanguageProvider>

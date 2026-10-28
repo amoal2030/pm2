@@ -1,7 +1,9 @@
-import React from 'react';
-import { Check, Flame, Edit3, Tag, Eye, Plus } from 'lucide-react';
-import { MenuItem, getItemImage, getCategoryFallback, CATEGORIES } from '../data/menuData';
+import React, { useState } from 'react';
+import { Check, Flame, Edit3, Tag, Eye, Plus, Sparkles } from 'lucide-react';
+import { MenuItem, getCategoryFallback, CATEGORIES } from '../data/menuData';
 import { useLanguage } from '../context/LanguageContext';
+import { useCustomImages } from '../context/CustomImagesContext';
+import { ItemImagePasteButton } from './ItemImagePasteButton';
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -19,7 +21,10 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
   onOpenDetails,
 }) => {
   const { isAr, currency, t } = useLanguage();
-  const imageUrl = getItemImage(item);
+  const { getImage, saveImage, hasCustomImage } = useCustomImages();
+  const [isDragOver, setIsDragOver] = useState(false);
+  const imageUrl = getImage(item);
+  const isCustom = hasCustomImage(item.id);
   const hasVariants = item.variants && item.variants.length > 0;
   const lowestPrice = hasVariants
     ? Math.min(...item.variants!.map((v) => v.price))
@@ -49,8 +54,31 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
       } border`}
     >
       <div>
-        {/* Item Image with Badges */}
-        <div className="relative w-full h-44 sm:h-48 mb-3.5 rounded-xl overflow-hidden bg-slate-100 dark:bg-neutral-950">
+        {/* Item Image with Badges & Paste Controls */}
+        <div
+          onDragOver={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsDragOver(true);
+          }}
+          onDragLeave={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsDragOver(false);
+          }}
+          onDrop={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsDragOver(false);
+            const file = e.dataTransfer.files?.[0];
+            if (file && file.type.startsWith('image/')) {
+              saveImage(item.id, file, primaryName);
+            }
+          }}
+          className={`relative w-full h-44 sm:h-48 mb-3.5 rounded-xl overflow-hidden bg-slate-100 dark:bg-neutral-950 transition-all ${
+            isDragOver ? 'ring-2 ring-amber-400 scale-[1.01]' : ''
+          }`}
+        >
           <img
             src={imageUrl}
             alt={primaryName}
@@ -64,10 +92,19 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
               }
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent pointer-events-none" />
+
+          {/* Quick Paste / Upload Image Control */}
+          <div className="absolute top-2.5 start-2.5 z-10">
+            <ItemImagePasteButton
+              itemId={item.id}
+              itemName={primaryName}
+              compact
+            />
+          </div>
 
           {/* Top Badge (Category or Popular) */}
-          <div className="absolute top-2.5 end-2.5 flex items-center gap-1.5">
+          <div className="absolute top-2.5 end-2.5 flex items-center gap-1.5 z-10">
             {badgeText && (
               <span className="px-2.5 py-0.5 rounded-md bg-amber-400 text-neutral-950 font-black text-xs shadow-md">
                 {badgeText}
@@ -80,6 +117,17 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
             <span className="absolute bottom-2.5 start-2.5 px-2.5 py-0.5 rounded-md bg-black/85 backdrop-blur-xs text-neutral-100 text-xs font-mono border border-white/10 flex items-center gap-1 shadow-sm">
               <Flame className="w-3.5 h-3.5 text-orange-400" />
               <span>{item.calories} {isAr ? 'سعرة حرارية' : 'cal'}</span>
+            </span>
+          )}
+
+          {/* Custom Image Indicator */}
+          {isCustom && (
+            <span
+              title={isAr ? 'تم حفظ صورة مخصصة لهذا الصنف تلقائياً' : 'Custom photo saved'}
+              className="absolute bottom-2.5 end-2.5 px-2 py-0.5 rounded-md bg-emerald-500/90 text-neutral-950 text-[10px] font-black flex items-center gap-1 shadow-sm backdrop-blur-xs"
+            >
+              <span>🖼️</span>
+              <span>{isAr ? 'صورة خاصة' : 'Custom'}</span>
             </span>
           )}
         </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Search, X, Flame } from 'lucide-react';
-import { MENU_ITEMS, MenuItem, getItemImage, getCategoryFallback, CATEGORIES } from '../data/menuData';
+import { MENU_ITEMS, MenuItem, getCategoryFallback, CATEGORIES } from '../data/menuData';
 import { useLanguage } from '../context/LanguageContext';
+import { useCustomImages } from '../context/CustomImagesContext';
 
 interface QuickSearchModalProps {
   isOpen: boolean;
@@ -26,6 +27,7 @@ export const QuickSearchModal: React.FC<QuickSearchModalProps> = ({
   onSelectItem,
 }) => {
   const { isAr, currency, t } = useLanguage();
+  const { getImage } = useCustomImages();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -103,11 +105,11 @@ export const QuickSearchModal: React.FC<QuickSearchModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm animate-fade-in text-start"
+      className="fixed inset-0 z-50 flex items-start justify-center p-2 xs:p-3 sm:p-6 bg-black/80 backdrop-blur-sm animate-fade-in text-start"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 rounded-3xl overflow-hidden shadow-2xl mt-12 sm:mt-16 animate-scale-up text-slate-900 dark:text-neutral-100"
+        className="relative w-full max-w-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl mt-4 sm:mt-16 animate-scale-up text-slate-900 dark:text-neutral-100 max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search Input Bar */}
@@ -174,7 +176,7 @@ export const QuickSearchModal: React.FC<QuickSearchModalProps> = ({
 
           {results.length > 0 ? (
             results.map((item) => {
-              const imageUrl = getItemImage(item);
+              const imageUrl = getImage(item);
               const lowestPrice = item.variants?.length
                 ? Math.min(...item.variants.map((v) => v.price))
                 : item.price;

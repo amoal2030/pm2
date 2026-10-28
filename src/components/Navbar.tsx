@@ -20,20 +20,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
           {/* Zone 1: Brand Wordmark & Logo */}
           <a
             href="#"
-            className="flex items-center gap-3 text-slate-900 dark:text-white group whitespace-nowrap shrink-0"
+            className="flex items-center gap-2 xs:gap-3 text-slate-900 dark:text-white group whitespace-nowrap min-w-0 shrink"
           >
-            <div className="w-14 h-10 sm:w-16 sm:h-11 rounded-lg overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform shadow-md bg-white border border-slate-200 dark:border-neutral-800">
+            <div className="w-14 h-10 xs:w-16 xs:h-11 sm:w-20 sm:h-13 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm bg-amber-400/10 p-0.5 border border-amber-300/80 dark:border-amber-500/30 shrink-0">
               <img
                 src={RESTAURANT_INFO.logo}
                 alt={isAr ? RESTAURANT_INFO.name : RESTAURANT_INFO.nameEn}
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-xl text-slate-900 dark:text-neutral-100 tracking-tight leading-none group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors">
+            <div className="flex flex-col min-w-0">
+              <span className="font-extrabold text-sm xs:text-base sm:text-lg lg:text-xl text-slate-900 dark:text-neutral-100 tracking-tight leading-tight group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors truncate">
                 {isAr ? RESTAURANT_INFO.name : RESTAURANT_INFO.nameEn}
               </span>
-              <span className="text-[11px] text-slate-500 dark:text-neutral-400 font-medium tracking-wide mt-1">
+              <span className="hidden xs:block text-[10px] sm:text-[11px] text-slate-500 dark:text-neutral-400 font-medium tracking-wide mt-0.5 truncate">
                 {isAr ? RESTAURANT_INFO.nameEn : RESTAURANT_INFO.name}
               </span>
             </div>
@@ -74,12 +74,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             </a>
           </nav>
           {/* Zone 3: Language Toggle, Theme Toggle, Search & Contact */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-2.5 shrink-0">
             {/* Language Toggle Button */}
             <button
               type="button"
               onClick={toggleLanguage}
-              className="flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 dark:bg-neutral-900 dark:border-neutral-800 dark:hover:border-amber-500/50 dark:text-amber-400 dark:hover:text-amber-300 text-xs font-bold transition-all cursor-pointer shadow-xs group"
+              className="flex items-center gap-1.5 px-2 xs:px-2.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-800 dark:bg-neutral-900 dark:border-neutral-800 dark:hover:border-amber-500/50 dark:text-amber-400 dark:hover:text-amber-300 text-xs font-bold transition-all cursor-pointer shadow-xs group"
               aria-label={t('language_toggle_label')}
               title={language === 'ar' ? 'Switch to English' : 'التحويل إلى العربية'}
             >
@@ -145,6 +145,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
       {/* Mobile drawer links */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white/98 dark:bg-neutral-900/98 border-b border-slate-200 dark:border-neutral-800 px-4 py-4 space-y-3 shadow-xl">
+          {/* Mobile Drawer Brand Header */}
+          <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-neutral-800">
+            <div className="w-14 h-10 rounded-xl overflow-hidden flex items-center justify-center shadow-xs bg-amber-400/10 p-0.5 border border-amber-300 dark:border-amber-500/30 shrink-0">
+              <img
+                src={RESTAURANT_INFO.logo}
+                alt={isAr ? RESTAURANT_INFO.name : RESTAURANT_INFO.nameEn}
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div>
+              <div className="font-extrabold text-sm text-slate-900 dark:text-white">
+                {isAr ? RESTAURANT_INFO.name : RESTAURANT_INFO.nameEn}
+              </div>
+              <div className="text-[11px] text-amber-600 dark:text-amber-400 font-bold">
+                {RESTAURANT_INFO.tagline}
+              </div>
+            </div>
+          </div>
+
           {/* Language Toggle row in Mobile */}
           <div className="flex items-center justify-between p-3 rounded-xl bg-slate-100 dark:bg-neutral-950 border border-slate-200 dark:border-neutral-800">
             <span className="text-xs font-bold text-slate-700 dark:text-neutral-300">

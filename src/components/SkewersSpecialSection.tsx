@@ -1,6 +1,7 @@
 import React from 'react';
 import { Gift, Plus } from 'lucide-react';
-import { MenuItem, getItemImage } from '../data/menuData';
+import { MenuItem } from '../data/menuData';
+import { useCustomImages } from '../context/CustomImagesContext';
 
 interface SkewersSpecialSectionProps {
   onSelectItem: (item: MenuItem) => void;
@@ -11,6 +12,7 @@ export const SkewersSpecialSection: React.FC<SkewersSpecialSectionProps> = ({
   onSelectItem,
   skewerItems,
 }) => {
+  const { getImage } = useCustomImages();
   return (
     <section id="skewers" className="py-14 bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 border-b border-neutral-800 text-right">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +62,7 @@ export const SkewersSpecialSection: React.FC<SkewersSpecialSectionProps> = ({
         {/* Skewers List Cards with Images */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skewerItems.map((item) => {
-            const imageUrl = getItemImage(item);
+            const imageUrl = getImage(item);
             const halfKgPrice = item.variants?.find((v) => v.name.includes('نصف'))?.price || item.price;
             const fullKgPrice = item.variants?.find((v) => v.name.includes('كيلو كامل'))?.price || 115;
 
@@ -71,21 +73,30 @@ export const SkewersSpecialSection: React.FC<SkewersSpecialSectionProps> = ({
                 className="group p-4 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-amber-500/50 transition-all duration-200 cursor-pointer flex flex-col justify-between shadow-md"
               >
                 <div>
-                  <div className="relative w-full h-40 mb-3 rounded-xl overflow-hidden bg-neutral-950">
-                    <img
-                      src={imageUrl}
-                      alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                      referrerPolicy="no-referrer"
-                      onError={(e) => {
-                        const fallback = `${import.meta.env.BASE_URL}assets/images/mixed_grills_platter_1792665161760.jpg`;
-                        if (e.currentTarget.src !== fallback) {
-                          e.currentTarget.src = fallback;
-                        }
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
+                  <div className="relative w-full h-40 mb-3 rounded-xl overflow-hidden bg-neutral-950 flex items-center justify-center">
+                    {imageUrl ? (
+                      <>
+                        <img
+                          src={imageUrl}
+                          alt={item.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            const fallback = `${import.meta.env.BASE_URL}assets/images/mixed_grills_platter_1792665161760.jpg`;
+                            if (e.currentTarget.src !== fallback) {
+                              e.currentTarget.src = fallback;
+                            }
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
+                      </>
+                    ) : (
+                      <div className="flex flex-col items-center justify-center text-center p-3">
+                        <span className="text-4xl mb-1">🍢</span>
+                        <span className="text-xs text-neutral-400 font-bold">{item.name}</span>
+                      </div>
+                    )}
                     <span className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-md bg-amber-400 text-neutral-950 font-black text-xs">
                       مشويات فحم
                     </span>

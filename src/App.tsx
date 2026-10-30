@@ -6,6 +6,7 @@ import { MenuSearchAndFilter, QuickFilterType } from './components/MenuSearchAnd
 import { MenuItemCard } from './components/MenuItemCard';
 import { ItemModal } from './components/ItemModal';
 import { QuickSearchModal } from './components/QuickSearchModal';
+import { RealPhotoSearchModal } from './components/RealPhotoSearchModal';
 import { CartDrawer } from './components/CartDrawer';
 import { BottomSelectionBar } from './components/BottomSelectionBar';
 import { AboutAndLocation } from './components/AboutAndLocation';
@@ -14,7 +15,6 @@ import { CartProvider, useCart } from './context/CartContext';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { CustomImagesProvider } from './context/CustomImagesContext';
-import { ImageSaveToast } from './components/ImageSaveToast';
 import { MENU_ITEMS, CATEGORIES, MenuItem, CategoryId } from './data/menuData';
 import { ArrowUp, UtensilsCrossed, Sparkles, Filter, ListCollapse } from 'lucide-react';
 
@@ -38,6 +38,8 @@ const MainContent: React.FC = () => {
   const [quickFilter, setQuickFilter] = useState<QuickFilterType>('all');
   const [selectedItemForModal, setSelectedItemForModal] = useState<MenuItem | null>(null);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const [isAiModalOpen, setIsAiModalOpen] = useState(false);
+  const [aiModalItem, setAiModalItem] = useState<MenuItem | null>(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const isUserClickingRef = useRef<boolean>(false);
 
@@ -321,7 +323,13 @@ const MainContent: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-neutral-950 text-slate-900 dark:text-neutral-100 flex flex-col font-sans selection:bg-amber-500 selection:text-neutral-950 pb-24 transition-colors duration-200">
       {/* Top Navbar */}
-      <Navbar onOpenSearch={() => setIsSearchModalOpen(true)} />
+      <Navbar
+        onOpenSearch={() => setIsSearchModalOpen(true)}
+        onOpenAiModal={() => {
+          setAiModalItem(null);
+          setIsAiModalOpen(true);
+        }}
+      />
 
       {/* Main Hero Header */}
       <Hero onExploreMenu={scrollToMenu} />
@@ -629,6 +637,21 @@ const MainContent: React.FC = () => {
       <ItemModal
         item={selectedItemForModal}
         onClose={() => setSelectedItemForModal(null)}
+        onOpenAiGenerator={(item) => {
+          setSelectedItemForModal(null);
+          setAiModalItem(item);
+          setIsAiModalOpen(true);
+        }}
+      />
+
+      {/* Real Food Photo Search & Assignment Modal */}
+      <RealPhotoSearchModal
+        isOpen={isAiModalOpen}
+        onClose={() => {
+          setIsAiModalOpen(false);
+          setAiModalItem(null);
+        }}
+        initialItem={aiModalItem}
       />
 
       {/* Site-wide Quick Search Modal (Ctrl+K) */}
@@ -643,9 +666,6 @@ const MainContent: React.FC = () => {
 
       {/* Floating Bottom Selection Bar matching user's reference */}
       <BottomSelectionBar />
-
-      {/* Automatic Image Save Floating Notification */}
-      <ImageSaveToast />
 
       {/* Back to Top Floating Button - strictly takes user to top ONLY when clicked */}
       {showBackToTop && (

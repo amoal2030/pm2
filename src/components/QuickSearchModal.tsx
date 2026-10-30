@@ -194,7 +194,7 @@ export const QuickSearchModal: React.FC<QuickSearchModalProps> = ({
                   className="group flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-neutral-950/70 border border-slate-200 dark:border-neutral-800/80 hover:border-amber-500/50 transition-all cursor-pointer shadow-xs"
                 >
                   <div className="flex items-center gap-3 flex-1 min-w-0">
-                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-slate-200 dark:bg-neutral-900 shrink-0">
+                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-slate-200 dark:bg-neutral-900 shrink-0 flex items-center justify-center">
                       <img
                         src={imageUrl}
                         alt={primaryName}

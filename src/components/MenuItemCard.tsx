@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Check, Flame, Edit3, Tag, Eye, Plus, Sparkles } from 'lucide-react';
-import { MenuItem, getCategoryFallback, CATEGORIES } from '../data/menuData';
+import React from 'react';
+import { Check, Flame, Edit3, Plus } from 'lucide-react';
+import { MenuItem, CATEGORIES } from '../data/menuData';
 import { useLanguage } from '../context/LanguageContext';
 import { useCustomImages } from '../context/CustomImagesContext';
-import { ItemImagePasteButton } from './ItemImagePasteButton';
+import { CATEGORY_FALLBACKS } from '../data/itemImages';
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -21,10 +21,8 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
   onOpenDetails,
 }) => {
   const { isAr, currency, t } = useLanguage();
-  const { getImage, saveImage, hasCustomImage } = useCustomImages();
-  const [isDragOver, setIsDragOver] = useState(false);
+  const { getImage } = useCustomImages();
   const imageUrl = getImage(item);
-  const isCustom = hasCustomImage(item.id);
   const hasVariants = item.variants && item.variants.length > 0;
   const lowestPrice = hasVariants
     ? Math.min(...item.variants!.map((v) => v.price))
@@ -54,31 +52,8 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
       } border`}
     >
       <div>
-        {/* Item Image with Badges & Paste Controls */}
-        <div
-          onDragOver={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsDragOver(true);
-          }}
-          onDragLeave={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsDragOver(false);
-          }}
-          onDrop={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsDragOver(false);
-            const file = e.dataTransfer.files?.[0];
-            if (file && file.type.startsWith('image/')) {
-              saveImage(item.id, file, primaryName);
-            }
-          }}
-          className={`relative w-full h-44 sm:h-48 mb-3.5 rounded-xl overflow-hidden bg-slate-100 dark:bg-neutral-950 transition-all ${
-            isDragOver ? 'ring-2 ring-amber-400 scale-[1.01]' : ''
-          }`}
-        >
+        {/* Dedicated Automatic Item Image with Badges */}
+        <div className="relative w-full h-44 sm:h-48 mb-3.5 rounded-xl overflow-hidden bg-slate-100 dark:bg-neutral-950 transition-all">
           <img
             src={imageUrl}
             alt={primaryName}
@@ -86,22 +61,13 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
             loading="lazy"
             referrerPolicy="no-referrer"
             onError={(e) => {
-              const fallback = getCategoryFallback(item.category);
+              const fallback = CATEGORY_FALLBACKS[item.category] || CATEGORY_FALLBACKS.broasted;
               if (e.currentTarget.src !== fallback) {
                 e.currentTarget.src = fallback;
               }
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent pointer-events-none" />
-
-          {/* Quick Paste / Upload Image Control */}
-          <div className="absolute top-2.5 start-2.5 z-10">
-            <ItemImagePasteButton
-              itemId={item.id}
-              itemName={primaryName}
-              compact
-            />
-          </div>
 
           {/* Top Badge (Category or Popular) */}
           <div className="absolute top-2.5 end-2.5 flex items-center gap-1.5 z-10">
@@ -119,112 +85,56 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
               <span>{item.calories} {isAr ? 'سعرة حرارية' : 'cal'}</span>
             </span>
           )}
-
-          {/* Public Image Indicator */}
-          {isCustom && (
-            <span
-              title={isAr ? 'صورة عامة منشورة وتظهر لجميع الزوار' : 'Public photo visible to all'}
-              className="absolute bottom-2.5 end-2.5 px-2 py-0.5 rounded-md bg-emerald-500/95 text-neutral-950 text-[10px] font-black flex items-center gap-1 shadow-sm backdrop-blur-xs"
-            >
-              <span>🌐</span>
-              <span>{isAr ? 'صورة عامة' : 'Public'}</span>
-            </span>
-          )}
         </div>
 
-        {/* Title, Subtitle, and Price */}
-        <div className="flex items-start justify-between gap-3 mb-2">
-          <div className="min-w-0">
-            <h3 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-colors leading-snug">
+        {/* Item Info */}
+        <div className="space-y-1.5">
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="font-black text-base sm:text-lg text-slate-900 dark:text-neutral-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug line-clamp-2">
               {primaryName}
             </h3>
-            {secondaryName && (
-              <span className="text-[11px] text-slate-500 dark:text-neutral-400 font-mono block mt-0.5 tracking-wide">
-                {secondaryName}
-              </span>
-            )}
           </div>
 
-          {!hasVariants ? (
-            <div className="flex items-baseline gap-1 shrink-0 font-mono text-amber-600 dark:text-amber-400 font-black text-base sm:text-lg">
-              <span>{item.price}</span>
-              <span className="text-xs font-sans font-bold">{currency}</span>
-            </div>
-          ) : (
-            <div className="text-end shrink-0">
-              <span className="text-[10px] text-slate-400 dark:text-neutral-400 block font-sans">
-                {t('starts_from')}
-              </span>
-              <div className="flex items-baseline gap-1 font-mono text-amber-600 dark:text-amber-400 font-black text-base sm:text-lg">
-                <span>{lowestPrice}</span>
-                <span className="text-xs font-sans font-bold">{currency}</span>
-              </div>
-            </div>
+          {secondaryName && secondaryName !== primaryName && (
+            <p className="text-xs text-slate-500 dark:text-neutral-400 line-clamp-1 font-medium">
+              {secondaryName}
+            </p>
           )}
-        </div>
 
-        {/* Multi-Size Variants Table/Pills */}
-        {hasVariants && (
-          <div className="flex flex-wrap items-center gap-1.5 my-2.5">
-            {item.variants!.map((variant, idx) => (
-              <span
-                key={idx}
-                className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-neutral-950/80 border border-slate-200 dark:border-neutral-800 text-[11px] text-slate-700 dark:text-neutral-200 font-medium flex items-center gap-1"
-              >
-                <span className="text-slate-500 dark:text-neutral-400">{variant.name}:</span>
-                <span className="font-mono font-bold text-amber-600 dark:text-amber-400">{variant.price} {currency}</span>
-              </span>
-            ))}
-          </div>
-        )}
-
-        {/* Free Sides Offer Notes (e.g., Skewers kg) */}
-        {item.freeSideNotes && (
-          <div className="my-2 p-2 rounded-lg bg-orange-50 border border-orange-200 text-orange-900 dark:bg-orange-950/40 dark:border-orange-500/30 dark:text-amber-300 text-[11px] font-medium leading-relaxed">
-            🎁 <span className="font-bold text-orange-950 dark:text-white">{isAr ? 'مجاناً:' : 'FREE:'}</span> {item.freeSideNotes}
-          </div>
-        )}
-
-        {/* Short Description */}
-        {item.description && (
-          <p className="text-xs text-slate-500 dark:text-neutral-400 leading-relaxed line-clamp-2 mb-3">
-            {item.description}
-          </p>
-        )}
-
-        {/* Tags */}
-        <div className="flex flex-wrap items-center gap-1.5 mb-3 text-[11px]">
-          {(item.name.includes('حراق') || (item.nameEn && item.nameEn.toLowerCase().includes('spicy'))) && (
-            <span className="px-2 py-0.5 rounded bg-red-100 text-red-700 dark:bg-red-950/80 dark:text-red-400 font-medium border border-red-200 dark:border-red-900/50">
-              {isAr ? 'حراق 🌶️' : 'Spicy 🌶️'}
-            </span>
+          {item.description && (
+            <p className="text-xs text-slate-600 dark:text-neutral-400 line-clamp-2 pt-0.5 leading-relaxed">
+              {item.description}
+            </p>
           )}
-          {item.calories !== undefined && (
-            <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-neutral-800/80 text-slate-600 dark:text-neutral-400 flex items-center gap-1 border border-slate-200 dark:border-neutral-700/50">
-              <Tag className="w-3 h-3 text-amber-500 dark:text-amber-400" />
-              <span>{isAr ? 'سعرات معتمدة' : 'Verified Calories'}</span>
-            </span>
+
+          {item.freeSideNotes && (
+            <div className="pt-1 text-[11px] font-bold text-amber-700 dark:text-amber-400/90 flex items-center gap-1">
+              <span>🎁</span>
+              <span>{item.freeSideNotes}</span>
+            </div>
           )}
         </div>
       </div>
 
-      {/* Action Buttons: "عرض التفاصيل" + "اختيار هذا الصنف للطلب" */}
-      <div className="pt-2 border-t border-slate-100 dark:border-neutral-800/80">
-        <div className="grid grid-cols-2 gap-2">
-          {/* Button 1: View Details Button */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              onOpenDetails(item);
-            }}
-            className="w-full py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-slate-200 dark:border-neutral-700 hover:border-amber-500/60 transition-all active:scale-98 cursor-pointer shadow-xs"
-          >
-            <Eye className="w-4 h-4 text-amber-500 dark:text-amber-400 shrink-0" />
-            <span>{isAr ? 'عرض التفاصيل' : 'Details'}</span>
-          </button>
+      {/* Price & Selection Actions */}
+      <div className="mt-4 pt-3 border-t border-slate-100 dark:border-neutral-800/80">
+        <div className="flex items-center justify-between gap-2">
+          {/* Price display */}
+          <div className="flex flex-col">
+            <span className="text-[10px] text-slate-500 dark:text-neutral-400">
+              {hasVariants ? (isAr ? 'يبدأ من' : 'Starts at') : (isAr ? 'السعر' : 'Price')}
+            </span>
+            <div className="flex items-baseline gap-1">
+              <span className="text-lg sm:text-xl font-black font-mono text-slate-900 dark:text-amber-400">
+                {lowestPrice}
+              </span>
+              <span className="text-xs font-bold text-slate-600 dark:text-neutral-300">
+                {currency}
+              </span>
+            </div>
+          </div>
 
-          {/* Button 2: Order / Select Button */}
+          {/* Action Button: Opens Details Modal */}
           {isSelected ? (
             <button
               type="button"
@@ -232,12 +142,12 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
                 e.stopPropagation();
                 onOpenDetails(item);
               }}
-              className="w-full py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 shadow-md shadow-emerald-950/20 transition-all active:scale-98 cursor-pointer truncate"
-              title={isAr ? 'تمت الإضافة - اضغط لتعديل الطلب' : 'Added - Click to customize'}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-black text-xs transition-transform active:scale-95 shadow-sm cursor-pointer"
             >
-              <Check className="w-4 h-4 stroke-[3] shrink-0" />
-              <span className="truncate">
-                {isAr ? `مختار ${selectedQuantity > 1 ? `(${selectedQuantity})` : ''}` : `Selected ${selectedQuantity > 1 ? `(${selectedQuantity})` : ''}`}
+              <Check className="w-4 h-4 stroke-[3]" />
+              <span>
+                {selectedQuantity > 0 ? `${selectedQuantity} × ` : ''}
+                {isAr ? 'تم الاختيار' : 'Selected'}
               </span>
             </button>
           ) : (
@@ -247,7 +157,7 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
                 e.stopPropagation();
                 onOpenDetails(item);
               }}
-              className="w-full py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1 bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-neutral-950 transition-all active:scale-98 cursor-pointer shadow-md font-black truncate"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-amber-500 dark:bg-neutral-800 dark:hover:bg-amber-500 text-slate-800 hover:text-neutral-950 dark:text-neutral-200 dark:hover:text-neutral-950 font-bold text-xs transition-all duration-200 cursor-pointer shadow-xs"
             >
               <Plus className="w-4 h-4 stroke-[3] shrink-0" />
               <span className="truncate">{isAr ? 'اختيار للطلب' : 'Add to Order'}</span>

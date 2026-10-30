@@ -99,20 +99,29 @@ async function saveToLocalCache(id: string, dataUrl: string): Promise<void> {
  * Sends to server API so it is published globally for all visitors,
  * and caches locally for immediate responsive UI.
  */
-export async function saveCustomImageToDB(id: string, dataUrl: string, name?: string): Promise<void> {
+export async function saveCustomImageToDB(id: string, dataUrl: string, name?: string): Promise<string> {
+  let savedUrl = dataUrl;
+
   // 1. Save to server API (makes it public across all users & devices)
   try {
-    await fetch('/api/item-images', {
+    const res = await fetch('/api/item-images', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ itemId: id, dataUrl, name }),
     });
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.imageUrl) {
+        savedUrl = data.imageUrl;
+      }
+    }
   } catch (err) {
     console.warn('Could not sync image to public server API:', err);
   }
 
   // 2. Cache locally in IndexedDB & localStorage
-  await saveToLocalCache(id, dataUrl);
+  await saveToLocalCache(id, savedUrl);
+  return savedUrl;
 }
 
 /**

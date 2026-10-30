@@ -2,9 +2,12 @@ import React from 'react';
 import { X, Trash2, Plus, Minus, MessageCircle, ShoppingBag, ShieldCheck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
+import { useCustomImages } from '../context/CustomImagesContext';
+import { CATEGORIES } from '../data/menuData';
 import { RESTAURANT_INFO } from '../data/restaurantInfo';
 
 export const CartDrawer: React.FC = () => {
+  const { getImage } = useCustomImages();
   const {
     items,
     updateQuantity,
@@ -105,15 +108,31 @@ export const CartDrawer: React.FC = () => {
                   {items.map((cartItem) => {
                     const itemTotal = (cartItem.quantity * cartItem.unitPrice).toFixed(0);
                     const itemName = isAr ? cartItem.item.name : (cartItem.item.nameEn || cartItem.item.name);
+                    const itemImg = getImage(cartItem.item);
+                    const catObj = CATEGORIES.find((c) => c.id === cartItem.item.category);
 
                     return (
                       <div
                         key={cartItem.cartItemId}
                         className="p-3.5 rounded-xl bg-slate-50 dark:bg-neutral-950/70 border border-slate-200 dark:border-neutral-800 space-y-2 shadow-xs"
                       >
-                        <div className="flex items-start justify-between gap-2">
-                          <div className="flex-1">
-                            <h4 className="font-bold text-sm text-slate-900 dark:text-neutral-100">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="w-12 h-12 rounded-lg overflow-hidden bg-slate-200 dark:bg-neutral-900 shrink-0 flex items-center justify-center border border-slate-200 dark:border-neutral-800">
+                            <img
+                              src={itemImg}
+                              alt={itemName}
+                              className="w-full h-full object-cover"
+                              referrerPolicy="no-referrer"
+                              onError={(e) => {
+                                const fallback = `${import.meta.env.BASE_URL}assets/images/broasted_chicken_hero_1792665160048.jpg`;
+                                if (e.currentTarget.src !== fallback) {
+                                  e.currentTarget.src = fallback;
+                                }
+                              }}
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-bold text-sm text-slate-900 dark:text-neutral-100 truncate">
                               {itemName}
                             </h4>
                             <div className="flex flex-wrap items-center gap-1.5 mt-1 text-[11px] text-slate-500 dark:text-neutral-400">

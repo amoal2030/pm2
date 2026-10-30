@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { MenuItem, getItemImage } from '../data/menuData';
+import { MenuItem } from '../data/menuData';
+import { getItemDedicatedImage } from '../data/itemImages';
 import {
   loadAllCustomImages,
   saveCustomImageToDB,
@@ -20,6 +21,7 @@ interface CustomImagesContextType {
   isLoading: boolean;
   getImage: (item: MenuItem) => string;
   hasCustomImage: (itemId: string) => boolean;
+  generateItemImageWithAi: (item: MenuItem) => Promise<{ success: boolean; error?: string; imageUrl?: string; requiresPaidKey?: boolean }>;
   saveImage: (itemId: string, source: File | Blob | string, itemName?: string) => Promise<boolean>;
   pasteFromClipboard: (itemId: string, itemName?: string) => Promise<{ success: boolean; message?: string }>;
   removeImage: (itemId: string, itemName?: string) => Promise<void>;
@@ -73,13 +75,13 @@ export const CustomImagesProvider: React.FC<{ children: React.ReactNode }> = ({ 
     setToast(null);
   }, []);
 
-  // Resolves the image for an item, preferring user-pasted custom image
+  // Resolves the active image for an item (prioritizes AI generated / server saved, falls back to dedicated image)
   const getImage = useCallback(
     (item: MenuItem): string => {
       if (customImages[item.id]) {
         return customImages[item.id];
       }
-      return getItemImage(item);
+      return getItemDedicatedImage(item);
     },
     [customImages]
   );
@@ -89,6 +91,48 @@ export const CustomImagesProvider: React.FC<{ children: React.ReactNode }> = ({ 
       return Boolean(customImages[itemId]);
     },
     [customImages]
+  );
+
+  // Calls server Gemini image generation API and updates active images
+  const generateItemImageWithAi = useCallback(
+    async (item: MenuItem): Promise<{ success: boolean; error?: string; imageUrl?: string; requiresPaidKey?: boolean }> => {
+      try {
+        const res = await fetch('/api/ai/generate-item-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            itemId: item.id,
+            name: item.name,
+            nameEn: item.nameEn,
+            description: item.description,
+            category: item.category,
+          }),
+        });
+
+        const data = await res.json();
+        if (res.ok && data.success && data.imageUrl) {
+          setCustomImages((prev) => ({
+            ...prev,
+            [item.id]: data.imageUrl,
+          }));
+          showToast(`تم توليد صورة بالذكاء الاصطناعي بنجاح لصنف «${item.name}»! ✨`, data.imageUrl, 'success');
+          return { success: true, imageUrl: data.imageUrl };
+        }
+
+        const errMsg = data.error || 'فشل في استلام الصورة من Gemini';
+        showToast(errMsg, undefined, 'error');
+        return {
+          success: false,
+          error: errMsg,
+          requiresPaidKey: Boolean(data.requiresPaidKey),
+        };
+      } catch (err: any) {
+        const errMsg = err?.message || 'تعذر الاتصال بخادم توليد الصور';
+        showToast(errMsg, undefined, 'error');
+        return { success: false, error: errMsg };
+      }
+    },
+    [showToast]
   );
 
   // Saves a new image (from file, blob, or base64) and automatically updates storage and UI
@@ -120,18 +164,18 @@ export const CustomImagesProvider: React.FC<{ children: React.ReactNode }> = ({ 
           return false;
         }
 
-        // 1. Save to persistent DB
-        await saveCustomImageToDB(itemId, finalDataUrl, itemName);
+        // 1. Save to persistent DB & server static storage
+        const savedUrl = await saveCustomImageToDB(itemId, finalDataUrl, itemName);
 
-        // 2. Update reactive state immediately
+        // 2. Update reactive state immediately with public URL
         setCustomImages((prev) => ({
           ...prev,
-          [itemId]: finalDataUrl,
+          [itemId]: savedUrl,
         }));
 
         // 3. User feedback
         const displayName = itemName ? `«${itemName}»` : 'الصنف';
-        showToast(`تم حفظ ونشر صورة ${displayName} كصورة عامة للجميع بنجاح! 🌐`, finalDataUrl, 'success');
+        showToast(`تم حفظ ونشر صورة ${displayName} كصورة عامة للجميع بنجاح! 🌐`, savedUrl, 'success');
         return true;
       } catch (err) {
         console.error('Failed to save custom image:', err);
@@ -216,6 +260,7 @@ export const CustomImagesProvider: React.FC<{ children: React.ReactNode }> = ({ 
         isLoading,
         getImage,
         hasCustomImage,
+        generateItemImageWithAi,
         saveImage,
         pasteFromClipboard,
         removeImage,

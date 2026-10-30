@@ -1,3 +1,6 @@
+import { getItemDedicatedImage, getItemDirectLink } from './itemImages';
+export { getItemDirectLink };
+
 export interface PriceVariant {
   name: string;
   price: number;
@@ -70,8 +73,7 @@ export const CATEGORY_IMAGES: Record<CategoryId, string> = {
 };
 
 export function getItemImage(item: MenuItem): string {
-  if (item.image) return item.image;
-  return getCategoryFallback(item.category);
+  return getItemDedicatedImage(item);
 }
 
 export function getCategoryFallback(categoryId: CategoryId): string {

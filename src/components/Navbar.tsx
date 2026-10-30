@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Phone, Menu, X, MapPin, Search, Sun, Moon, Languages } from 'lucide-react';
+import { Phone, Menu, X, MapPin, Search, Sun, Moon, Languages, Sparkles } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantInfo';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 
 interface NavbarProps {
   onOpenSearch: () => void;
+  onOpenAiModal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAiModal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { language, toggleLanguage, isAr, t } = useLanguage();
@@ -108,6 +109,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
               )}
             </button>
 
+            {/* Real Photo Search Modal Button */}
+            {onOpenAiModal && (
+              <button
+                type="button"
+                onClick={onOpenAiModal}
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-amber-500/15 hover:from-amber-500/25 hover:to-orange-500/25 border border-amber-500/40 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-200 text-xs font-bold transition-all cursor-pointer shadow-xs group"
+                title={isAr ? 'البحث عن صور الأصناف الحقيقية' : 'Search Real Food Photos'}
+                aria-label="Real Photo Search"
+              >
+                <Search className="w-4 h-4 text-amber-500 group-hover:scale-110 transition-transform" />
+                <span className="hidden sm:inline font-bold">{isAr ? 'بحث عن صور حقيقية' : 'Real Photos'}</span>
+              </button>
+            )}
+
             {/* Search Button */}
             <button
               onClick={onOpenSearch}
@@ -202,6 +217,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
               )}
             </button>
           </div>
+
+          {/* AI Generator button for mobile */}
+          {onOpenAiModal && (
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenAiModal();
+              }}
+              className="w-full flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-amber-500/15 border border-amber-500/40 text-amber-700 dark:text-amber-300 font-bold text-xs cursor-pointer shadow-xs"
+            >
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-amber-500" />
+                <span>{isAr ? 'توليد صور الأصناف بالذكاء الاصطناعي' : 'Generate Menu Photos with AI'}</span>
+              </div>
+              <span className="text-[10px] font-mono font-black bg-amber-500 text-neutral-950 px-2 py-0.5 rounded-full">Gemini</span>
+            </button>
+          )}
 
           <button
             onClick={() => {

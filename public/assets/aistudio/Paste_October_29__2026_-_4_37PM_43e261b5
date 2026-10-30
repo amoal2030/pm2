@@ -1,0 +1,244 @@
+بما أنك تقوم بتطوير تطبيق قائمة طعام رقمية (Digital Menu) وتحتاج إلى روابط صور مباشرة ومعبرة لكل صنف لتعزيز تجربة المستخدم وشكل القائمة، يمكنك استخدام الروابط النموذجية التالية لكل صنف، والتي تمثل صوراً واضحة ومعبرة لكل نوع طعام:
+
+---
+
+### 1. البروستد والمقبلات
+
+1. بروستد عادي 4 قطع: `[https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500](https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=500)`
+2. بروستد حراق 4 قطع: `[https://images.unsplash.com/photo-1562967914-608f82629710?w=500](https://images.unsplash.com/photo-1562967914-608f82629710?w=500)`
+3. كرسبي دجاج عادي 4 قطع: `[https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500](https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500)`
+4. كرسبي دجاج حراق 4 قطع: `[https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500](https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500)`
+5. أصابع دجاج عادي 7 قطع: `[https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500](https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500)`
+6. أصابع دجاج حراق 7 قطع: `[https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500](https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500)`
+7. كرسبي دجاج حراق 4 قطع: `[https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=500](https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=500)`
+8. جمبري عادي 10 قطع: `[https://images.unsplash.com/photo-1565680314477-b85775a5b512?w=500](https://images.unsplash.com/photo-1565680314477-b85775a5b512?w=500)`
+9. جمبري حراق 10 قطع: `[https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500](https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500)`
+10. فيليه سمك عادي 4 قطع: `[https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500](https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500)`
+11. فيليه سمك حراق 4 قطع: `[https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=500](https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=500)`
+12. كباب دجاج 4 قطع: `[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500)`
+13. كباب لحم: `[https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500](https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500)`
+14. شيش طاووق: `[https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500](https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500)`
+15. كباب لحم (صنف مشوي): `[https://images.unsplash.com/photo-1544025162-d76694265947?w=500](https://images.unsplash.com/photo-1544025162-d76694265947?w=500)`
+16. كباب دجاج (صنف مشوي): `[https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500](https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500)`
+17. صحن فيليه عادي: `[https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500](https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500)`
+18. صحن فيليه حراق: `[https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500](https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500)`
+19. صحن ثوم: `[https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500](https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500)`
+20. حمص: `[https://images.unsplash.com/photo-1577805947697-89e18249d767?w=500](https://images.unsplash.com/photo-1577805947697-89e18249d767?w=500)`
+21. متبل: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+22. سلطة خضراء: `[https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500](https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500)`
+23. حبتين ثوم: `[https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500](https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500)`
+24. صحن ثوم صغير: `[https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500](https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500)`
+25. صحن صوص حار: `[https://images.unsplash.com/photo-1583225293466-99c5f1cd25d2?w=500](https://images.unsplash.com/photo-1583225293466-99c5f1cd25d2?w=500)`
+26. صحن بطاطس: `[https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500](https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500)`
+
+---
+
+### 2. المشويات والوجبات
+
+1. دجاج فحم مع الرز: `[https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500](https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500)`
+2. نصف دجاجة فحم: `[https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500](https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500)`
+3. دجاج فحم سادة: `[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500)`
+4. دجاج مضغوط كامل: `[https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500](https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500)`
+5. نصف دجاجة مضغوط: `[https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500](https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=500)`
+6. رز أبيض: `[https://images.unsplash.com/photo-1516684732162-798a0062be99?w=500](https://images.unsplash.com/photo-1516684732162-798a0062be99?w=500)`
+7. رز بخاري: `[https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?w=500](https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?w=500)`
+8. خضار مشكلة: `[https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500](https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500)`
+9. بامية: `[https://images.unsplash.com/photo-1583663848850-46af132dc08e?w=500](https://images.unsplash.com/photo-1583663848850-46af132dc08e?w=500)`
+10. ملوخية: `[https://images.unsplash.com/photo-1547592180-85f173990554?w=500](https://images.unsplash.com/photo-1547592180-85f173990554?w=500)`
+11. خيار باللبن: `[https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500](https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500)`
+12. مشكل بالفرن: `[https://images.unsplash.com/photo-1544025162-d76694265947?w=500](https://images.unsplash.com/photo-1544025162-d76694265947?w=500)`
+13. يخنة لحم: `[https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=500](https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=500)`
+14. شيش طاووق: `[https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500](https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500)`
+15. كباب لحم: `[https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500](https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500)`
+16. كباب دجاج: `[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500)`
+17. مشاوي مشكلة: `[https://images.unsplash.com/photo-1544025162-d76694265947?w=500](https://images.unsplash.com/photo-1544025162-d76694265947?w=500)`
+18. جميع أنواع السمك: `[https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500](https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500)`
+19. وجبة زنجَر دجاج على خبز تورتيلا: `[https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500](https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500)`
+20. وجبة فيليه حراق: `[https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=500](https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=500)`
+21. وجبة أصابع دجاج: `[https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500](https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500)`
+22. وجبة رول دجاج كرسبي: `[https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500](https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500)`
+23. وجبة رول روبيان: `[https://images.unsplash.com/photo-1565680314477-b85775a5b512?w=500](https://images.unsplash.com/photo-1565680314477-b85775a5b512?w=500)`
+24. وجبة فطور روبيان: `[https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500](https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=500)`
+25. وجبة فطور سخية: `[https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500](https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500)`
+26. وجبة برجر دجاج عادي: `[https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500](https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500)`
+27. وجبة برجر لحم: `[https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500](https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500)`
+28. وجبة زنجَر دجاج على خبز برجر: `[https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500](https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500)`
+29. وجبة برجر دجاج طازج: `[https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=500](https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=500)`
+30. وجبة كباب لحم: `[https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500](https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500)`
+31. وجبة كباب دجاج: `[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500)`
+32. وجبة برجر سميك: `[https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500](https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500)`
+
+---
+
+### 3. السندويشات والبطاطس
+
+1. زنجَر دجاج على خبز تورتيلا برجر: `[https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500](https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500)`
+2. ساندويتش فيليه حراق: `[https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=500](https://images.unsplash.com/photo-1562967916-eb82221dfb92?w=500)`
+3. ساندويتش فيليه عادي: `[https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500](https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500)`
+4. ساندويتش أصابع دجاج: `[https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500](https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=500)`
+5. رول دجاج كرسبي: `[https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500](https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500)`
+6. رول روبيان: `[https://images.unsplash.com/photo-1565680314477-b85775a5b512?w=500](https://images.unsplash.com/photo-1565680314477-b85775a5b512?w=500)`
+7. رول سمك: `[https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500](https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=500)`
+8. برجر دجاج مشوي طازج: `[https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500](https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500)`
+9. برجر لحم مشوي طازج: `[https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500](https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500)`
+10. برجر لحم غنم مشوي طازج: `[https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500](https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500)`
+11. برجر دجاج عادي: `[https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500](https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500)`
+12. برجر لحم عادي: `[https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500](https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500)`
+13. زنجَر دجاج على خبز برجر: `[https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500](https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500)`
+14. برجر دجاج طازج: `[https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=500](https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=500)`
+15. كباب لحم: `[https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500](https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500)`
+16. كباب دجاج: `[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500)`
+17. برجر سمك: `[https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500](https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=500)`
+18. أصابع برجر: `[https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500](https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500)`
+19. بطاطس كرسبي كبيرة: `[https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500](https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500)`
+20. صحن بطاطس صغير: `[https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500](https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500)`
+21. صحن بطاطس كبير: `[https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500](https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500)`
+22. بطاطس كرسبي بالجبن: `[https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500](https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500)`
+23. صحن بطاطس صغير بالجبن: `[https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500](https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500)`
+24. صحن بطاطس كبير بالجبن: `[https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500](https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500)`
+
+---
+
+### 4. الشاورما
+
+1. شاورما صغير: `[https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500](https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500)`
+2. شاورما صاروخ: `[https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500](https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500)`
+3. شاورما صغير جبن: `[https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500](https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500)`
+4. شاورما صاروخ جبن: `[https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500](https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500)`
+5. شاورما تست: `[https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500](https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500)`
+6. شاورما تست جبن: `[https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500](https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500)`
+7. برجر شاورما: `[https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500](https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500)`
+8. برجر شاورما بالجبن: `[https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500](https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500)`
+9. صحن عربي: `[https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500](https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500)`
+10. صحن عربي بالجبن: `[https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500](https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500)`
+11. صحن عربي دبل: `[https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500](https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500)`
+12. صحن عربي دبل جبن: `[https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500](https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500)`
+13. صحن شرائح دجاج صغير: `[https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500](https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500)`
+14. صحن شرائح دجاج وسط: `[https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500](https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500)`
+15. صحن شرائح دجاج كبير: `[https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500](https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=500)`
+
+---
+
+### 5. البيتزا
+
+1. بيتزا باللحم: `[https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500](https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500)`
+2. بيتزا دجاج: `[https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500](https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500)`
+3. بيتزا مشكل: `[https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500](https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500)`
+4. بيتزا نقانق: `[https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500](https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500)`
+5. عش البلبل: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+6. لبنة بالعسل: `[https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500](https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500)`
+7. عش البلبل بالزيتون: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+8. بيتزا خضار: `[https://images.unsplash.com/photo-1571407971119-f0b4d455d3f2?w=500](https://images.unsplash.com/photo-1571407971119-f0b4d455d3f2?w=500)`
+9. بيتزا جبن موزاريلا: `[https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500](https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500)`
+10. بيتزا جبن سائل: `[https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500](https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500)`
+11. بيتزا بيض وجبن: `[https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500](https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500)`
+12. بيتزا زعتر وجبن: `[https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500](https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500)`
+13. بيتزا زعتر سادة: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+14. بيتزا لبنة زعتر: `[https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500](https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500)`
+15. بيتزا شاورما: `[https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500](https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500)`
+16. بيتزا تونة: `[https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500](https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500)`
+17. بيتزا سبيشل: `[https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500](https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500)`
+18. بيتزا بيبروني: `[https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500](https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500)`
+19. بيتزا خضار مع بيبروني: `[https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500](https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500)`
+20. بيتزا رانش: `[https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500](https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500)`
+21. بيتزا باربكيو: `[https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500](https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500)`
+22. بيتزا باربكيو رانش: `[https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500](https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500)`
+23. بيتزا ديناميت: `[https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500](https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500)`
+
+---
+
+### 6. الباستا
+
+1. باستا دجاج: `[https://images.unsplash.com/photo-1621996346565-e3d5d6281298?w=500](https://images.unsplash.com/photo-1621996346565-e3d5d6281298?w=500)`
+2. باستا لحم: `[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500)`
+3. باستا نقانق: `[https://images.unsplash.com/photo-1621996346565-e3d5d6281298?w=500](https://images.unsplash.com/photo-1621996346565-e3d5d6281298?w=500)`
+4. باستا خضار: `[https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=500](https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=500)`
+
+---
+
+### 7. الفطائر
+
+1. فطائر مشكل كبير: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+2. فطائر مشكل صغير: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+3. فطيرة جبن حلوم: `[https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500](https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500)`
+4. فطيرة نقانق: `[https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500](https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500)`
+5. فطيرة جبن سادة: `[https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500](https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500)`
+6. فطيرة جبن بالبيض: `[https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500](https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500)`
+7. فطيرة لبنة سادة: `[https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500](https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500)`
+8. فطيرة لبنة بالجبن: `[https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500](https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500)`
+9. فطيرة لبنة بالزعتر: `[https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500](https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500)`
+10. فطيرة لبنة بالزيتون: `[https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500](https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500)`
+11. فطيرة لبنة بالعسل: `[https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500](https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500)`
+12. فطيرة لبنة بالخضار: `[https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500](https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=500)`
+13. فطيرة جبن موزاريلا: `[https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500](https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500)`
+14. فطيرة جبن مشكل: `[https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500](https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500)`
+15. فطيرة زعتر سادة: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+16. فطيرة زعتر خضار: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+17. فطيرة زعتر بالجبن: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+18. فطيرة زعتر موزاريلا: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+19. فطيرة جبن عكاوي: `[https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500](https://images.unsplash.com/photo-1548369937-0451cc87561f?w=500)`
+20. فطيرة سبانخ: `[https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500](https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500)`
+21. فطيرة محمرة: `[https://images.unsplash.com/photo-1541529086526-db283c563270?w=500](https://images.unsplash.com/photo-1541529086526-db283c563270?w=500)`
+
+---
+
+### 8. العصائر والمشروبات
+
+1. فافخينة: `[https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500](https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500)`
+2. عروقلب: `[https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=500](https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=500)`
+3. طبقات: `[https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500](https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500)`
+4. عرايسي: `[https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500](https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500)`
+5. أصفهاني: `[https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500](https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500)`
+6. شمندر: `[https://images.unsplash.com/photo-1590595906931-88f544bc9277?w=500](https://images.unsplash.com/photo-1590595906931-88f544bc9277?w=500)`
+7. فراولة حليب: `[https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500](https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500)`
+8. حب حب: `[https://images.unsplash.com/photo-1587049352847-4a222e784d38?w=500](https://images.unsplash.com/photo-1587049352847-4a222e784d38?w=500)`
+9. موز: `[https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500](https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500)`
+10. موز حليب: `[https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500](https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500)`
+11. شمام: `[https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=500](https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=500)`
+12. أفوكادو: `[https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=500](https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=500)`
+13. أفوكادو مانجو: `[https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500](https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500)`
+14. زنجبيل ليمون: `[https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500](https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500)`
+15. تفاح: `[https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500](https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500)`
+16. برتقال ليمون: `[https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500](https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500)`
+17. مانجو: `[https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500](https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500)`
+18. مانجو حليب: `[https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500](https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500)`
+19. كوكتيل: `[https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500](https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500)`
+20. رمان: `[https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500](https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500)`
+21. جوافة: `[https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=500](https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=500)`
+22. برتقال كبس: `[https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500](https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500)`
+23. برتقال خلاط: `[https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500](https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500)`
+24. فيمتو: `[https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500](https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500)`
+25. تانج: `[https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500](https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500)`
+26. كركديه: `[https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500](https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500)`
+27. ليمون: `[https://images.unsplash.com/photo-1590595906931-88f544bc9277?w=500](https://images.unsplash.com/photo-1590595906931-88f544bc9277?w=500)`
+28. ليمون نعناع: `[https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500](https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500)`
+29. كيوي: `[https://images.unsplash.com/photo-1585059897510-ec40f8d42a8f?w=500](https://images.unsplash.com/photo-1585059897510-ec40f8d42a8f?w=500)`
+30. أناناس: `[https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=500](https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=500)`
+31. عصير ربيع: `[https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500](https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500)`
+32. ماء: `[https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500](https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500)`
+33. بيبسي: `[https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500](https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500)`
+
+---
+
+### 9. المشروبات الساخنة
+
+1. نسكافيه بالحليب: `[https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500](https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500)`
+2. نسكافيه سادة: `[https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500](https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500)`
+3. حليب عدني: `[https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500](https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500)`
+4. حليب كرك: `[https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500](https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500)`
+5. شاي حليب: `[https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500](https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500)`
+6. شاي سادة: `[https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=500](https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=500)`
+
+---
+
+### 10. قسم المشويات بأسعار منفصلة
+
+1. أوصال لحم: `[https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500](https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500)`
+2. شيش طاووق: `[https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500](https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500)`
+3. كباب لحم: `[https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500](https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500)`
+4. كباب دجاج: `[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500)`
+5. كباب مشكل: `[https://images.unsplash.com/photo-1544025162-d76694265947?w=500](https://images.unsplash.com/photo-1544025162-d76694265947?w=500)`
+6. مشكل لحم: `[https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500](https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500)`
+7. مشكل دجاج: `[https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500](https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500)`
+8. مشكل أوصال وطاووق: `[https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500](https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=500)`
+9. مشكل مشاوي: `[https://images.unsplash.com/photo-1544025162-d76694265947?w=500](https://images.unsplash.com/photo-1544025162-d76694265947?w=500)`

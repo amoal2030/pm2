@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { X, Plus, Minus, Flame, ShoppingBag, Check, FileText, ArrowRight, ArrowLeft, Trash2, Camera, Clipboard } from 'lucide-react';
-import { MenuItem, PriceVariant, getCategoryFallback, CATEGORIES } from '../data/menuData';
+import { X, Plus, Minus, Flame, ShoppingBag, Check, FileText, ArrowRight, ArrowLeft, Trash2, Search } from 'lucide-react';
+import { MenuItem, PriceVariant, CATEGORIES } from '../data/menuData';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useCustomImages } from '../context/CustomImagesContext';
-import { ItemImagePasteButton } from './ItemImagePasteButton';
+import { CATEGORY_FALLBACKS } from '../data/itemImages';
 
 interface ItemModalProps {
   item: MenuItem | null;
   onClose: () => void;
+  onOpenAiGenerator?: (item: MenuItem) => void;
 }
 
-export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
+export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose, onOpenAiGenerator }) => {
   const { items, addItem, removeItem } = useCart();
   const { isAr, currency, t } = useLanguage();
-  const { getImage, saveImage, hasCustomImage } = useCustomImages();
+  const { getImage } = useCustomImages();
   const [selectedVariant, setSelectedVariant] = useState<PriceVariant | undefined>(undefined);
   const [isSpicy, setIsSpicy] = useState<boolean>(false);
   const [notes, setNotes] = useState<string>('');
   const [quantity, setQuantity] = useState<number>(1);
   const [addedSuccess, setAddedSuccess] = useState<boolean>(false);
-  const [isDragOver, setIsDragOver] = useState<boolean>(false);
 
   // Check if item is already in cart
   const existingCartItem = items.find((ci) => ci.item.id === item?.id);
@@ -46,80 +46,9 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
     }
   }, [item, existingCartItem]);
 
-  // Window paste listener: pressing Ctrl+V anywhere in modal automatically pastes & saves image
-  useEffect(() => {
-    if (!item) return;
-    const itemName = isAr ? item.name : item.nameEn || item.name;
-
-    const handleWindowPaste = (e: ClipboardEvent) => {
-      const activeTag = document.activeElement?.tagName?.toLowerCase();
-      // If user is focused on the text notes textarea and pasted pure text, don't hijack
-      if (activeTag === 'textarea' || activeTag === 'input') {
-        const hasImage = Array.from(e.clipboardData?.items || []).some((it) => it.type.startsWith('image/'));
-        if (!hasImage) return;
-      }
-
-      const files = e.clipboardData?.files;
-      if (files && files.length > 0) {
-        for (let i = 0; i < files.length; i++) {
-          if (files[i].type.startsWith('image/')) {
-            e.preventDefault();
-            saveImage(item.id, files[i], itemName);
-            return;
-          }
-        }
-      }
-
-      const clipItems = e.clipboardData?.items;
-      if (clipItems) {
-        for (let i = 0; i < clipItems.length; i++) {
-          if (clipItems[i].type.startsWith('image/')) {
-            const blob = clipItems[i].getAsFile();
-            if (blob) {
-              e.preventDefault();
-              saveImage(item.id, blob, itemName);
-              return;
-            }
-          }
-        }
-      }
-
-      // Check if user pasted an image link / URL
-      const pastedText = e.clipboardData?.getData('text')?.trim();
-      if (
-        pastedText &&
-        (pastedText.startsWith('http://') ||
-          pastedText.startsWith('https://') ||
-          pastedText.startsWith('data:image/'))
-      ) {
-        // If not typing in input/textarea
-        if (activeTag !== 'textarea' && activeTag !== 'input') {
-          e.preventDefault();
-          saveImage(item.id, pastedText, itemName);
-          return;
-        }
-      }
-
-      // Check if user pasted HTML with an img
-      const pastedHtml = e.clipboardData?.getData('text/html');
-      if (pastedHtml && activeTag !== 'textarea' && activeTag !== 'input') {
-        const match = pastedHtml.match(/<img[^>]+src=["']([^"']+)["']/i);
-        if (match && match[1]) {
-          e.preventDefault();
-          saveImage(item.id, match[1], itemName);
-          return;
-        }
-      }
-    };
-
-    window.addEventListener('paste', handleWindowPaste);
-    return () => window.removeEventListener('paste', handleWindowPaste);
-  }, [item, isAr, saveImage]);
-
   if (!item) return null;
 
   const imageUrl = getImage(item);
-  const isCustom = hasCustomImage(item.id);
   const currentUnitPrice = selectedVariant ? selectedVariant.price : item.price;
   const currentTotalPrice = currentUnitPrice * quantity;
   const categoryObj = CATEGORIES.find((c) => c.id === item.category);
@@ -330,38 +259,16 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
           </div>
         </div>
 
-        {/* Header Image with Drag-and-Drop & Auto-Save */}
-        <div
-          onDragOver={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsDragOver(true);
-          }}
-          onDragLeave={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsDragOver(false);
-          }}
-          onDrop={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsDragOver(false);
-            const file = e.dataTransfer.files?.[0];
-            if (file && file.type.startsWith('image/')) {
-              saveImage(item.id, file, primaryName);
-            }
-          }}
-          className={`relative w-full h-44 sm:h-52 bg-slate-100 dark:bg-neutral-950 shrink-0 transition-all ${
-            isDragOver ? 'ring-4 ring-amber-400' : ''
-          }`}
-        >
+        {/* Header Image with Badges */}
+        <div className="relative w-full h-48 sm:h-56 shrink-0 bg-slate-100 dark:bg-neutral-950 overflow-hidden">
           <img
             src={imageUrl}
             alt={primaryName}
             className="w-full h-full object-cover"
+            loading="lazy"
             referrerPolicy="no-referrer"
             onError={(e) => {
-              const fallback = getCategoryFallback(item.category);
+              const fallback = CATEGORY_FALLBACKS[item.category] || CATEGORY_FALLBACKS.broasted;
               if (e.currentTarget.src !== fallback) {
                 e.currentTarget.src = fallback;
               }
@@ -369,14 +276,17 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-neutral-950/20 to-transparent pointer-events-none" />
 
-          {/* Quick Paste / Upload button on Image */}
-          <div className="absolute top-3.5 start-3.5 z-10">
-            <ItemImagePasteButton
-              itemId={item.id}
-              itemName={primaryName}
-              compact
-            />
-          </div>
+          {onOpenAiGenerator && (
+            <button
+              type="button"
+              onClick={() => onOpenAiGenerator(item)}
+              className="absolute top-3.5 start-3.5 px-2.5 py-1 rounded-lg bg-black/80 hover:bg-black text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center gap-1.5 shadow-md backdrop-blur-xs transition-all cursor-pointer z-10 group"
+              title={isAr ? 'البحث عن صورة حقيقية لهذا الصنف' : 'Search real photo for this dish'}
+            >
+              <Search className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
+              <span>{isAr ? 'بحث عن صورة حقيقية' : 'Real Photo'}</span>
+            </button>
+          )}
 
           {item.badge && (
             <span className="absolute top-3.5 end-3.5 px-3 py-1 rounded-lg bg-amber-400 text-neutral-950 font-black text-xs shadow-md z-10">
@@ -394,39 +304,11 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
               <span>{item.calories} {isAr ? 'سعرة حرارية' : 'cal'}</span>
             </span>
           )}
-
-          {isCustom && (
-            <span className="absolute bottom-3 end-3 px-2.5 py-1 rounded-lg bg-emerald-500/95 text-neutral-950 text-xs font-black flex items-center gap-1 shadow-md">
-              <span>🌐</span>
-              <span>{isAr ? 'صورة عامة منشورة' : 'Public photo'}</span>
-            </span>
-          )}
-
-          {isDragOver && (
-            <div className="absolute inset-0 z-20 bg-amber-500/30 backdrop-blur-xs flex items-center justify-center text-amber-200 font-bold text-sm">
-              {isAr ? 'أفلت الصورة هنا لحفظها تلقائياً' : 'Drop image here to auto-save'}
-            </div>
-          )}
         </div>
 
         {/* Modal Scrollable Body */}
         <div className="p-5 sm:p-6 space-y-5 overflow-y-auto flex-1">
-          {/* Quick Image Customization & Paste Box */}
-          <div className="p-3.5 rounded-2xl bg-slate-100/80 dark:bg-neutral-800/60 border border-slate-200 dark:border-neutral-700/80 text-start space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-black text-slate-800 dark:text-neutral-200 flex items-center gap-1.5">
-                <Camera className="w-4 h-4 text-amber-500" />
-                <span>{isAr ? 'تغيير صورة الصنف العامة (تظهر لجميع الزوار)' : 'Change Public Item Photo (Visible to all)'}</span>
-              </span>
-              <span className="text-[10px] bg-slate-200 dark:bg-neutral-700 text-slate-700 dark:text-neutral-300 px-2 py-0.5 rounded font-mono font-bold">
-                Ctrl + V
-              </span>
-            </div>
-            <ItemImagePasteButton
-              itemId={item.id}
-              itemName={primaryName}
-            />
-          </div>
+
           {/* Title, Category & Price */}
           <div className="border-b border-slate-200 dark:border-neutral-800/80 pb-4">
             <div className="flex items-start justify-between gap-3">

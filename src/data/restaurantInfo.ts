@@ -29,5 +29,5 @@ export const RESTAURANT_INFO: RestaurantInfo = {
   address: "محطة بترو هلا - حي الفرسان - طريق الدمام الرياض السريع",
   addressDetails: "الدمام، حي الفرسان، طريق الدمام - الرياض السريع، محطة بترو هلا",
   mapsUrl: "https://maps.app.goo.gl/f5oGGiNFEkMrYZR4A",
-  workingHours: "يومياً من الساعة 12:00 ظهراً حتى 02:00 بعد منتصف الليل",
+  workingHours: "يومياً من الساعة 11:00 ظهراً حتى 05:00 فجراً",
 };

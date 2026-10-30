@@ -109,20 +109,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAiModal }) =
               )}
             </button>
 
-            {/* Real Photo Search Modal Button */}
-            {onOpenAiModal && (
-              <button
-                type="button"
-                onClick={onOpenAiModal}
-                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 rounded-xl bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-amber-500/15 hover:from-amber-500/25 hover:to-orange-500/25 border border-amber-500/40 text-amber-700 dark:text-amber-300 hover:text-amber-900 dark:hover:text-amber-200 text-xs font-bold transition-all cursor-pointer shadow-xs group"
-                title={isAr ? 'البحث عن صور الأصناف الحقيقية' : 'Search Real Food Photos'}
-                aria-label="Real Photo Search"
-              >
-                <Search className="w-4 h-4 text-amber-500 group-hover:scale-110 transition-transform" />
-                <span className="hidden sm:inline font-bold">{isAr ? 'بحث عن صور حقيقية' : 'Real Photos'}</span>
-              </button>
-            )}
-
             {/* Search Button */}
             <button
               onClick={onOpenSearch}
@@ -218,24 +204,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAiModal }) =
             </button>
           </div>
 
-          {/* AI Generator button for mobile */}
-          {onOpenAiModal && (
-            <button
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAiModal();
-              }}
-              className="w-full flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-amber-500/15 via-orange-500/15 to-amber-500/15 border border-amber-500/40 text-amber-700 dark:text-amber-300 font-bold text-xs cursor-pointer shadow-xs"
-            >
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-amber-500" />
-                <span>{isAr ? 'توليد صور الأصناف بالذكاء الاصطناعي' : 'Generate Menu Photos with AI'}</span>
-              </div>
-              <span className="text-[10px] font-mono font-black bg-amber-500 text-neutral-950 px-2 py-0.5 rounded-full">Gemini</span>
-            </button>
-          )}
-
           <button
             onClick={() => {
               setMobileMenuOpen(false);
@@ -250,41 +218,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAiModal }) =
             <span className="text-xs text-slate-500 dark:text-neutral-500 font-mono">Ctrl+K</span>
           </button>
 
-          <a
-            href="#menu"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-slate-800 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800"
-          >
-            {t('full_menu_count')}
-          </a>
-          <a
-            href="#section-broasted"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-slate-800 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800"
-          >
-            {t('nav_broasted')}
-          </a>
-          <a
-            href="#section-grilled"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-slate-800 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800"
-          >
-            {t('nav_grilled')}
-          </a>
-          <a
-            href="#section-skewers_kg"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-slate-800 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800"
-          >
-            {t('nav_skewers')}
-          </a>
-          <a
-            href="#location"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-slate-800 dark:text-neutral-200 hover:text-amber-500 dark:hover:text-amber-400 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800"
-          >
-            {t('nav_location')}
-          </a>
           <div className="pt-2 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs text-slate-500 dark:text-neutral-400">
             <span>{t('nav_call_prompt')}</span>
             <a

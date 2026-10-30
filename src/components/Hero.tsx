@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, ArrowDown, Sparkles, MessageCircle, Clock } from 'lucide-react';
+import { MapPin, ArrowDown, MessageCircle, Clock } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantInfo';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -22,7 +22,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
           <div className="lg:col-span-7 space-y-6 text-start">
             {/* Top Tagline from menu */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 dark:bg-orange-950/70 border border-orange-300 dark:border-orange-500/30 text-orange-700 dark:text-orange-400 text-xs sm:text-sm font-bold shadow-xs">
-              <Sparkles className="w-4 h-4 text-amber-500 dark:text-amber-400" />
               <span>{t('tagline')}</span>
               <span className="text-slate-400 dark:text-neutral-500">·</span>
               <span className="text-slate-700 dark:text-neutral-300">{t('station_location_tag')}</span>
@@ -85,39 +84,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
                 <span>{t('view_on_map')}</span>
               </a>
             </div>
-
-            {/* Direct Calling Strip "اتصل قبل أن تصل" */}
-            <div className="pt-4 border-t border-slate-200 dark:border-neutral-800/80 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-              <a
-                href={`tel:${RESTAURANT_INFO.phone1}`}
-                className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-neutral-900/90 border border-slate-200 dark:border-neutral-800 hover:border-amber-500/50 transition-colors group shadow-xs"
-              >
-                <div className="w-9 h-9 rounded-lg bg-orange-100 dark:bg-orange-950 border border-orange-300 dark:border-orange-500/30 flex items-center justify-center text-orange-600 dark:text-orange-400 group-hover:scale-105 transition-transform">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-slate-500 dark:text-neutral-400 text-[11px]">{t('call_or_whatsapp')}</div>
-                  <div className="font-mono font-bold text-slate-900 dark:text-neutral-100 text-sm group-hover:text-amber-500 dark:group-hover:text-amber-400">
-                    {RESTAURANT_INFO.whatsappFormatted}
-                  </div>
-                </div>
-              </a>
-
-              <a
-                href={`tel:${RESTAURANT_INFO.phone1}`}
-                className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 dark:bg-neutral-900/90 border border-slate-200 dark:border-neutral-800 hover:border-amber-500/50 transition-colors group shadow-xs"
-              >
-                <div className="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-950 border border-amber-300 dark:border-amber-500/30 flex items-center justify-center text-amber-600 dark:text-amber-400 group-hover:scale-105 transition-transform">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-slate-500 dark:text-neutral-400 text-[11px]">{isAr ? 'هاتف الفرع المباشر:' : 'Direct Branch Phone:'}</div>
-                  <div className="font-mono font-bold text-slate-900 dark:text-neutral-100 text-sm group-hover:text-amber-500 dark:group-hover:text-amber-400">
-                    {RESTAURANT_INFO.whatsappFormatted}
-                  </div>
-                </div>
-              </a>
-            </div>
           </div>
 
           {/* Hero Visual Card */}
@@ -161,46 +127,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* 4 Feature Pillars */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-start">
-          <div className="p-4 rounded-xl bg-slate-50 dark:bg-neutral-900/70 border border-slate-200 dark:border-neutral-800/80 hover:border-slate-300 dark:hover:border-neutral-700 transition-colors shadow-xs">
-            <div className="text-2xl mb-1.5">🍗</div>
-            <h4 className="font-bold text-sm text-slate-900 dark:text-neutral-100">
-              {isAr ? 'بروستد وكريسبي' : 'Broasted & Crispy'}
-            </h4>
-            <p className="text-xs text-slate-500 dark:text-neutral-400 mt-1">
-              {isAr ? 'دجاج طازج بتتبيلة ذهبية مقرمشة' : 'Fresh poultry in golden crispy seasoning'}
-            </p>
-          </div>
-          <div className="p-4 rounded-xl bg-slate-50 dark:bg-neutral-900/70 border border-slate-200 dark:border-neutral-800/80 hover:border-slate-300 dark:hover:border-neutral-700 transition-colors shadow-xs">
-            <div className="text-2xl mb-1.5">🍢</div>
-            <h4 className="font-bold text-sm text-slate-900 dark:text-neutral-100">
-              {isAr ? 'مشويات بالكيلو' : 'Skewers by KG'}
-            </h4>
-            <p className="text-xs text-slate-500 dark:text-neutral-400 mt-1">
-              {isAr ? 'أسياخ طازجة + خضار وثوم مجاني' : 'Fresh charcoal skewers + free grilled veggies'}
-            </p>
-          </div>
-          <div className="p-4 rounded-xl bg-slate-50 dark:bg-neutral-900/70 border border-slate-200 dark:border-neutral-800/80 hover:border-slate-300 dark:hover:border-neutral-700 transition-colors shadow-xs">
-            <div className="text-2xl mb-1.5">🌯</div>
-            <h4 className="font-bold text-sm text-slate-900 dark:text-neutral-100">
-              {isAr ? 'شاورما وصحن عربي' : 'Shawarma & Arabic Plate'}
-            </h4>
-            <p className="text-xs text-slate-500 dark:text-neutral-400 mt-1">
-              {isAr ? 'خبز صاج محمص وصوصات خاصة' : 'Toasted saj wrap with signature dips'}
-            </p>
-          </div>
-          <div className="p-4 rounded-xl bg-slate-50 dark:bg-neutral-900/70 border border-slate-200 dark:border-neutral-800/80 hover:border-slate-300 dark:hover:border-neutral-700 transition-colors shadow-xs">
-            <div className="text-2xl mb-1.5">🍹</div>
-            <h4 className="font-bold text-sm text-slate-900 dark:text-neutral-100">
-              {isAr ? 'عصائر طبيعية' : '100% Natural Juices'}
-            </h4>
-            <p className="text-xs text-slate-500 dark:text-neutral-400 mt-1">
-              {isAr ? 'عورقلب، فافخينة، وطبقات 100%' : 'Awar Qalb, Fakhfakhina & layered cocktails'}
-            </p>
           </div>
         </div>
       </div>

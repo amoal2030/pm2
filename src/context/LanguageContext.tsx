@@ -121,8 +121,8 @@ export const translations = {
     en: 'Serving an all-inclusive menu of regular and spicy golden broasted chicken, fresh charcoal skewers by KG, Saj shawarma, quick meals, Italian pasta, pies, and 100% fresh juices.',
   },
   explore_menu_btn: {
-    ar: 'استكشف قائمة الطعام (204 أصناف)',
-    en: 'Explore Menu (204 Items)',
+    ar: 'استكشف قائمة الطعام',
+    en: 'Explore Menu',
   },
   quick_order_whatsapp: {
     ar: 'طلب سريع عبر واتساب',
@@ -437,8 +437,8 @@ export const translations = {
     en: 'Working Hours:',
   },
   working_hours_val: {
-    ar: 'يومياً من الساعة 12:00 ظهراً حتى 02:00 بعد منتصف الليل',
-    en: 'Daily: 12:00 PM to 02:00 AM',
+    ar: 'يومياً من الساعة 11:00 ظهراً حتى 05:00 فجراً',
+    en: 'Daily: 11:00 AM to 05:00 AM',
   },
   location_title: {
     ar: 'موقعنا الجغرافي',

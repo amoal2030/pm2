@@ -125,11 +125,11 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const getOrderTypeLabel = (type: OrderType) => {
     switch (type) {
       case 'car_pickup':
-        return '🚗 اتصل قبل أن تصل (استلام من السيارة / المحطة)';
+        return '🚗 استلام من السيارة';
       case 'dine_in':
         return '🍽️ استلام وسفري من الفرع (محطة بترو هلا)';
       case 'delivery':
-        return '🛵 توصيل إلى موقعي';
+        return '🚗 استلام من السيارة';
     }
   };
 
@@ -138,8 +138,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const variantText = i.selectedVariant ? ` (${i.selectedVariant.name})` : '';
       const spicyText = i.isSpicy ? ' [حراق 🌶️]' : '';
       const notesText = i.notes ? ` - ملاحظة: ${i.notes}` : '';
-      const lineTotal = (i.quantity * i.unitPrice).toFixed(2);
-      return `${index + 1}. *${i.item.name}*${variantText}${spicyText} × ${i.quantity} = ${lineTotal} ر.س${notesText}`;
+      const lineTotal = i.item.isPriceUnspecified ? '[سعر غير محدد]' : `${(i.quantity * i.unitPrice).toFixed(2)} ر.س`;
+      return `${index + 1}. *${i.item.name}*${variantText}${spicyText} × ${i.quantity} = ${lineTotal}${notesText}`;
     });
 
     const message = [

@@ -146,9 +146,15 @@ export const CartDrawer: React.FC = () => {
                                   {isAr ? 'حراق 🌶️' : 'Spicy 🌶️'}
                                 </span>
                               )}
-                              <span className="font-mono text-slate-600 dark:text-neutral-400">
-                                {cartItem.unitPrice} {currency} {isAr ? 'للواحد' : 'each'}
-                              </span>
+                              {cartItem.item.isPriceUnspecified ? (
+                                <span className="text-amber-600 dark:text-amber-400 font-bold">
+                                  {isAr ? 'سعر غير محدد' : 'Price unspecified'}
+                                </span>
+                              ) : (
+                                <span className="font-mono text-slate-600 dark:text-neutral-400">
+                                  {cartItem.unitPrice} {currency} {isAr ? 'للواحد' : 'each'}
+                                </span>
+                              )}
                             </div>
                             {cartItem.notes && (
                               <div className="mt-1.5 p-2 rounded-lg bg-white dark:bg-neutral-900/90 border border-amber-300 dark:border-amber-500/20 text-[11px] text-amber-800 dark:text-amber-300 flex items-start gap-1.5 shadow-xs">
@@ -192,7 +198,7 @@ export const CartDrawer: React.FC = () => {
                           </div>
 
                           <div className="font-mono font-black text-amber-600 dark:text-amber-400 text-sm">
-                            {itemTotal} {currency}
+                            {cartItem.item.isPriceUnspecified ? (isAr ? 'غير محدد' : 'Unspecified') : `${itemTotal} ${currency}`}
                           </div>
                         </div>
                       </div>
@@ -216,13 +222,13 @@ export const CartDrawer: React.FC = () => {
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span>{isAr ? '🚗 اتصل قبل أن تصل (استلام سيارة)' : '🚗 Call Before Arriving (Car Pickup)'}</span>
+                        <span>{isAr ? '🚗 استلام من السيارة' : '🚗 Car Pickup'}</span>
                         {orderType === 'car_pickup' && <ShieldCheck className="w-4 h-4 text-amber-500" />}
                       </div>
                       <span className="text-[10px] text-slate-500 dark:text-neutral-400 block mt-0.5">
                         {isAr
-                          ? 'نجهز طلبك مسبقاً لتستلمه ساخناً من محطة بترو هلا'
-                          : 'Order prepared ahead for hot & fresh pickup at Petro Hala station'}
+                          ? 'نجهز طلبك مسبقاً لتستلمه ساخناً من سيارتك عند المطعم'
+                          : 'Order prepared ahead for direct car pickup'}
                       </span>
                     </button>
 
@@ -241,26 +247,6 @@ export const CartDrawer: React.FC = () => {
                       </div>
                       <span className="text-[10px] text-slate-500 dark:text-neutral-400 block mt-0.5">
                         {isAr ? 'استلام مباشر من كاونتر المطعم' : 'Direct pickup from the restaurant counter'}
-                      </span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setOrderType('delivery')}
-                      className={`p-2.5 rounded-xl border text-start text-xs transition-colors cursor-pointer ${
-                        orderType === 'delivery'
-                          ? 'border-amber-500 bg-amber-500/10 text-slate-900 dark:text-white font-bold'
-                          : 'border-slate-200 bg-slate-50 text-slate-700 dark:border-neutral-800 dark:bg-neutral-950/60 dark:text-neutral-300'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <span>{isAr ? '🛵 توصيل إلى الموقع' : '🛵 Delivery to Location'}</span>
-                        {orderType === 'delivery' && <ShieldCheck className="w-4 h-4 text-amber-500" />}
-                      </div>
-                      <span className="text-[10px] text-slate-500 dark:text-neutral-400 block mt-0.5">
-                        {isAr
-                          ? 'سيتم التنسيق معك عبر الواتساب لتحديد موقع التوصيل'
-                          : 'Delivery location will be confirmed via WhatsApp'}
                       </span>
                     </button>
                   </div>

@@ -33,6 +33,7 @@ export interface MenuItem {
   nameEn?: string;
   category: CategoryId;
   price: number;
+  isPriceUnspecified?: boolean;
   variants?: PriceVariant[];
   calories?: number;
   freeSideNotes?: string;
@@ -440,7 +441,8 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'جميع انواع السمك',
     nameEn: 'All types of fish',
     category: 'grilled',
-    price: 35,
+    price: 0,
+    isPriceUnspecified: true,
   },
 
   // ==========================================

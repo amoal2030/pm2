@@ -244,7 +244,7 @@ export const QuickSearchModal: React.FC<QuickSearchModalProps> = ({
                   <div className="flex items-center gap-3 shrink-0 ms-3">
                     <div className="text-end font-mono">
                       <div className="font-black text-amber-600 dark:text-amber-400 text-sm sm:text-base">
-                        {lowestPrice} {currency}
+                        {item.isPriceUnspecified ? (isAr ? 'غير محدد' : 'Unspecified') : `${lowestPrice} ${currency}`}
                       </div>
                       {item.variants && (
                         <div className="text-[10px] text-slate-400 dark:text-neutral-500">

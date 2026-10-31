@@ -316,9 +316,15 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
               </div>
 
               <div className="text-end shrink-0">
-                <div className="font-mono text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400">
-                  {currentUnitPrice} <span className="text-xs font-sans font-bold">{currency}</span>
-                </div>
+                {item.isPriceUnspecified ? (
+                  <div className="text-lg sm:text-xl font-black text-amber-600 dark:text-amber-400">
+                    {isAr ? 'غير محدد' : 'Unspecified'}
+                  </div>
+                ) : (
+                  <div className="font-mono text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400">
+                    {currentUnitPrice} <span className="text-xs font-sans font-bold">{currency}</span>
+                  </div>
+                )}
                 {item.variants && item.variants.length > 0 && selectedVariant && (
                   <span className="text-[11px] text-slate-500 dark:text-neutral-400 block mt-0.5 font-medium">
                     ({isAr ? `حجم: ${selectedVariant.name}` : `Size: ${selectedVariant.name}`})
@@ -524,7 +530,10 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
                   <span>
                     {existingCartItem
                       ? (isAr ? 'تحديث وتأكيد الطلب' : 'Update in Order')
-                      : (isAr ? 'تأكيد اختيار الصنف' : 'Add to Order')} · {currentTotalPrice} {currency}
+                      : (isAr ? 'تأكيد اختيار الصنف' : 'Add to Order')}
+                    {item.isPriceUnspecified
+                      ? ` · ${isAr ? 'غير محدد' : 'Unspecified'}`
+                      : ` · ${currentTotalPrice} ${currency}`}
                   </span>
                 </>
               )}

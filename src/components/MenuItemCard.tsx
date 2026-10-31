@@ -122,16 +122,28 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
           {/* Price display */}
           <div className="flex flex-col">
             <span className="text-[10px] text-slate-500 dark:text-neutral-400">
-              {hasVariants ? (isAr ? 'يبدأ من' : 'Starts at') : (isAr ? 'السعر' : 'Price')}
+              {item.isPriceUnspecified
+                ? (isAr ? 'السعر' : 'Price')
+                : hasVariants
+                ? (isAr ? 'يبدأ من' : 'Starts at')
+                : (isAr ? 'السعر' : 'Price')}
             </span>
-            <div className="flex items-baseline gap-1">
-              <span className="text-lg sm:text-xl font-black font-mono text-slate-900 dark:text-amber-400">
-                {lowestPrice}
-              </span>
-              <span className="text-xs font-bold text-slate-600 dark:text-neutral-300">
-                {currency}
-              </span>
-            </div>
+            {item.isPriceUnspecified ? (
+              <div className="flex items-baseline gap-1">
+                <span className="text-base sm:text-lg font-black text-amber-600 dark:text-amber-400">
+                  {isAr ? 'غير محدد' : 'Unspecified'}
+                </span>
+              </div>
+            ) : (
+              <div className="flex items-baseline gap-1">
+                <span className="text-lg sm:text-xl font-black font-mono text-slate-900 dark:text-amber-400">
+                  {lowestPrice}
+                </span>
+                <span className="text-xs font-bold text-slate-600 dark:text-neutral-300">
+                  {currency}
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Action Button: Opens Details Modal */}

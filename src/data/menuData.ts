@@ -233,7 +233,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-17',
-    image: ITEM_DEDICATED_IMAGES['br-17'],
+    image: '/assets/aistudio/image_b41fac47.png',
     name: 'مقبلات',
     nameEn: 'Appetizers',
     category: 'broasted',

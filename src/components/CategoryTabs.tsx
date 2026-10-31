@@ -45,7 +45,7 @@ export const CategoryTabs: React.FC<CategoryTabsProps> = ({
   };
 
   return (
-    <div className="w-full bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md border-y border-slate-200 dark:border-neutral-800 shadow-md py-2.5 transition-colors duration-200">
+    <div className="w-full bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md border-b border-slate-200 dark:border-neutral-800 shadow-xs py-2.5 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center">
           {/* Right Scroll Arrow */}
@@ -76,15 +76,6 @@ export const CategoryTabs: React.FC<CategoryTabsProps> = ({
             >
               <span className="text-base">🍽️</span>
               <span>{t('tab_all')}</span>
-              <span
-                className={`text-[11px] font-mono px-2 py-0.5 rounded-md font-bold ${
-                  activeCategory === 'all'
-                    ? 'bg-neutral-950/20 text-neutral-950'
-                    : 'bg-slate-200 text-slate-700 dark:bg-neutral-800 dark:text-neutral-400'
-                }`}
-              >
-                {categoryCounts['all'] || 0}
-              </span>
             </button>
 
             {/* Exact 11 Categories extracted 100% from original PDF */}

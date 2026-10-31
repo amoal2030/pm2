@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Plus, Minus, Flame, ShoppingBag, Check, FileText, ArrowRight, ArrowLeft, Trash2, Search } from 'lucide-react';
+import { X, Plus, Minus, Flame, ShoppingBag, Check, FileText, ArrowRight, ArrowLeft, Trash2 } from 'lucide-react';
 import { MenuItem, PriceVariant, CATEGORIES } from '../data/menuData';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -9,10 +9,9 @@ import { CATEGORY_FALLBACKS } from '../data/itemImages';
 interface ItemModalProps {
   item: MenuItem | null;
   onClose: () => void;
-  onOpenAiGenerator?: (item: MenuItem) => void;
 }
 
-export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose, onOpenAiGenerator }) => {
+export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
   const { items, addItem, removeItem } = useCart();
   const { isAr, currency, t } = useLanguage();
   const { getImage } = useCustomImages();
@@ -275,18 +274,6 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose, onOpenAiGen
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-neutral-950/20 to-transparent pointer-events-none" />
-
-          {onOpenAiGenerator && (
-            <button
-              type="button"
-              onClick={() => onOpenAiGenerator(item)}
-              className="absolute top-3.5 start-3.5 px-2.5 py-1 rounded-lg bg-black/80 hover:bg-black text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center gap-1.5 shadow-md backdrop-blur-xs transition-all cursor-pointer z-10 group"
-              title={isAr ? 'البحث عن صورة حقيقية لهذا الصنف' : 'Search real photo for this dish'}
-            >
-              <Search className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
-              <span>{isAr ? 'بحث عن صورة حقيقية' : 'Real Photo'}</span>
-            </button>
-          )}
 
           {item.badge && (
             <span className="absolute top-3.5 end-3.5 px-3 py-1 rounded-lg bg-amber-400 text-neutral-950 font-black text-xs shadow-md z-10">

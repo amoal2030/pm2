@@ -6,7 +6,6 @@ import { MenuSearchAndFilter, QuickFilterType } from './components/MenuSearchAnd
 import { MenuItemCard } from './components/MenuItemCard';
 import { ItemModal } from './components/ItemModal';
 import { QuickSearchModal } from './components/QuickSearchModal';
-import { RealPhotoSearchModal } from './components/RealPhotoSearchModal';
 import { CartDrawer } from './components/CartDrawer';
 import { BottomSelectionBar } from './components/BottomSelectionBar';
 import { AboutAndLocation } from './components/AboutAndLocation';
@@ -16,7 +15,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { CustomImagesProvider } from './context/CustomImagesContext';
 import { MENU_ITEMS, CATEGORIES, MenuItem, CategoryId } from './data/menuData';
-import { ArrowUp, UtensilsCrossed, Sparkles, Filter, ListCollapse } from 'lucide-react';
+import { ArrowUp, UtensilsCrossed, Sparkles } from 'lucide-react';
 
 function normalizeArabic(text: string): string {
   if (!text) return '';
@@ -38,8 +37,6 @@ const MainContent: React.FC = () => {
   const [quickFilter, setQuickFilter] = useState<QuickFilterType>('all');
   const [selectedItemForModal, setSelectedItemForModal] = useState<MenuItem | null>(null);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-  const [isAiModalOpen, setIsAiModalOpen] = useState(false);
-  const [aiModalItem, setAiModalItem] = useState<MenuItem | null>(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const isUserClickingRef = useRef<boolean>(false);
 
@@ -211,9 +208,9 @@ const MainContent: React.FC = () => {
   };
 
   const scrollToMenu = () => {
-    const target = document.getElementById('menu');
+    const target = document.getElementById('menu-items-area') || document.getElementById(`section-${CATEGORIES[0].id}`) || document.getElementById('menu');
     if (target) {
-      const yOffset = -75;
+      const yOffset = -140;
       const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -325,16 +322,9 @@ const MainContent: React.FC = () => {
       {/* Top Navbar */}
       <Navbar
         onOpenSearch={() => setIsSearchModalOpen(true)}
-        onOpenAiModal={() => {
-          setAiModalItem(null);
-          setIsAiModalOpen(true);
-        }}
       />
 
-      {/* Main Hero Header */}
-      <Hero onExploreMenu={scrollToMenu} />
-
-      {/* Sticky Category Navigation Bar in the Menu Area */}
+      {/* Sticky Category Navigation Bar directly under Toolbar */}
       <div id="menu" className="sticky top-20 z-30 scroll-mt-20">
         <CategoryTabs
           activeCategory={activeCategory}
@@ -343,55 +333,23 @@ const MainContent: React.FC = () => {
         />
       </div>
 
+      {/* Main Hero Header */}
+      <Hero onExploreMenu={scrollToMenu} />
+
       {/* Main Electronic Menu Body */}
-      <main className="py-8 bg-slate-50 dark:bg-neutral-950 flex-1 transition-colors duration-200">
+      <main id="menu-items-area" className="py-8 bg-slate-50 dark:bg-neutral-950 flex-1 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {/* Menu Title, Description & Search Bar */}
           <div className="space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-start">
               <div>
                 <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 mb-1">
-                  <Sparkles className="w-3.5 h-3.5" />
                   <span>{t('menu_official_badge')}</span>
                 </div>
                 <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center gap-2">
                   <UtensilsCrossed className="w-6 h-6 text-orange-500" />
                   <span>{t('menu_main_heading')}</span>
                 </h1>
-              </div>
-
-              {/* View Mode Toggle: All Sequential Sections vs Single Filtered Section */}
-              <div className="flex items-center gap-2 self-start sm:self-auto">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setFilterModeOnly(!filterModeOnly);
-                    if (activeCategory === 'all') {
-                      setActiveCategory('broasted');
-                    }
-                  }}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all cursor-pointer shadow-xs ${
-                    filterModeOnly
-                      ? 'bg-amber-500 text-neutral-950 border-amber-400 shadow-md font-black'
-                      : 'bg-white dark:bg-neutral-900 text-slate-700 dark:text-neutral-300 hover:text-slate-900 dark:hover:text-white border-slate-200 dark:border-neutral-800'
-                  }`}
-                >
-                  {filterModeOnly ? (
-                    <>
-                      <Filter className="w-3.5 h-3.5" />
-                      <span>{t('view_single_section')}</span>
-                    </>
-                  ) : (
-                    <>
-                      <ListCollapse className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
-                      <span>{t('view_all_sections')}</span>
-                    </>
-                  )}
-                </button>
-
-                <span className="font-mono font-bold text-amber-600 dark:text-amber-400 bg-white dark:bg-neutral-900 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-neutral-800 text-xs shadow-xs">
-                  {t('items_sections_summary')}
-                </span>
               </div>
             </div>
 
@@ -637,21 +595,6 @@ const MainContent: React.FC = () => {
       <ItemModal
         item={selectedItemForModal}
         onClose={() => setSelectedItemForModal(null)}
-        onOpenAiGenerator={(item) => {
-          setSelectedItemForModal(null);
-          setAiModalItem(item);
-          setIsAiModalOpen(true);
-        }}
-      />
-
-      {/* Real Food Photo Search & Assignment Modal */}
-      <RealPhotoSearchModal
-        isOpen={isAiModalOpen}
-        onClose={() => {
-          setIsAiModalOpen(false);
-          setAiModalItem(null);
-        }}
-        initialItem={aiModalItem}
       />
 
       {/* Site-wide Quick Search Modal (Ctrl+K) */}

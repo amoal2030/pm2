@@ -6,10 +6,9 @@ import { useLanguage } from '../context/LanguageContext';
 
 interface NavbarProps {
   onOpenSearch: () => void;
-  onOpenAiModal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch, onOpenAiModal }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { language, toggleLanguage, isAr, t } = useLanguage();

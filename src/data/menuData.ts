@@ -1,4 +1,4 @@
-import { getItemDedicatedImage, getItemDirectLink } from './itemImages';
+import { getItemDedicatedImage, getItemDirectLink, ITEM_DEDICATED_IMAGES } from './itemImages';
 export { getItemDirectLink };
 
 export interface PriceVariant {
@@ -60,17 +60,17 @@ export const CATEGORIES: Category[] = [
 const BASE = (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) || '/';
 
 export const CATEGORY_IMAGES: Record<CategoryId, string> = {
-  broasted: `${BASE}assets/images/broasted_chicken_hero_1792665160048.jpg`,
-  grilled: `${BASE}assets/images/mixed_grills_platter_1792665161760.jpg`,
-  skewers_kg: `${BASE}assets/images/mixed_grills_platter_1792665161760.jpg`,
-  meals: `${BASE}assets/images/fast_food_burger_meal_1792666977054.jpg`,
-  shawarma: `${BASE}assets/images/arabic_shawarma_plate_1792665161698.jpg`,
-  sandwiches: `${BASE}assets/images/fast_food_burger_meal_1792666977054.jpg`,
-  pizza: `${BASE}assets/images/pizza_italian_style_1792666976146.jpg`,
-  pasta: `${BASE}assets/images/creamy_pasta_bowl_1792666977207.jpg`,
-  pies: `${BASE}assets/images/savory_arabic_pies_1792666976945.jpg`,
-  juices: `${BASE}assets/images/fresh_natural_juices_1792665161919.jpg`,
-  hot_drinks: `${BASE}assets/images/traditional_karak_tea_1792667015269.jpg`,
+  broasted: 'https://images.deliveryhero.io/image/hungerstation/menuitem/image/155950?width=1440&quality=75&webp=true',
+  grilled: 'https://th.bing.com/th/id/OIP.hz6S8H2GI74Q_ddaBnC9dwHaE7?w=265&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
+  skewers_kg: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+  meals: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
+  shawarma: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=800&q=80',
+  sandwiches: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80',
+  pizza: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80',
+  pasta: 'https://th.bing.com/th/id/OIP.zKJnE-RRT2a4zAT-pAw2aAHaE8?w=267&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
+  pies: 'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=800&q=80',
+  juices: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80',
+  hot_drinks: 'https://images.deliveryhero.io/image/hungerstation/restaurant/android_cover_photo/cbbce617baa96cc3ee1f06070f1ff8fb.jpg',
 };
 
 export function getItemImage(item: MenuItem): string {
@@ -87,6 +87,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'br-1',
+    image: ITEM_DEDICATED_IMAGES['br-1'],
     name: 'بروستد عادي 4 قطع',
     nameEn: 'Regular broasted 4 pieces',
     category: 'broasted',
@@ -96,6 +97,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-2',
+    image: ITEM_DEDICATED_IMAGES['br-2'],
     name: 'بروستد حراق 4 قطع',
     nameEn: 'Burning broasted 4 pieces',
     category: 'broasted',
@@ -105,6 +107,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-3',
+    image: ITEM_DEDICATED_IMAGES['br-3'],
     name: 'كرسبي دجاج عادي 4 قطع',
     nameEn: 'Regular crispy chicken',
     category: 'broasted',
@@ -113,6 +116,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-4',
+    image: ITEM_DEDICATED_IMAGES['br-4'],
     name: 'كرسبي دجاج حراق 4 قطع',
     nameEn: 'Crispy spicy chicken 4 pieces',
     category: 'broasted',
@@ -121,6 +125,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-5',
+    image: ITEM_DEDICATED_IMAGES['br-5'],
     name: 'اصابع دجاج حراق 7 قطع',
     nameEn: 'Spicy chicken fingers',
     category: 'broasted',
@@ -129,6 +134,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-6',
+    image: ITEM_DEDICATED_IMAGES['br-6'],
     name: 'اصابع دجاج عادي 7 قطع',
     nameEn: 'Regular chicken fingers',
     category: 'broasted',
@@ -137,6 +143,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-7',
+    image: ITEM_DEDICATED_IMAGES['br-7'],
     name: 'قطع جمبري عادي 10 قطع',
     nameEn: 'Regular shrimp 10 pieces',
     category: 'broasted',
@@ -145,6 +152,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-8',
+    image: ITEM_DEDICATED_IMAGES['br-8'],
     name: 'قطع جمبري حراق 10 قطع',
     nameEn: 'Spicy shrimp 10 pieces',
     category: 'broasted',
@@ -153,6 +161,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-9',
+    image: ITEM_DEDICATED_IMAGES['br-9'],
     name: 'فيليه سمك عادي 4 قطع',
     nameEn: 'Regular fish fillet 4 pieces',
     category: 'broasted',
@@ -161,6 +170,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-10',
+    image: ITEM_DEDICATED_IMAGES['br-10'],
     name: 'فيليه سمك حراق 4 قطع',
     nameEn: 'Spicy fish fillet 4 pieces',
     category: 'broasted',
@@ -169,6 +179,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-11',
+    image: ITEM_DEDICATED_IMAGES['br-11'],
     name: 'كباب دجاج 4 اسياخ',
     nameEn: 'Chicken kebab 4 pieces',
     category: 'broasted',
@@ -177,6 +188,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-12',
+    image: ITEM_DEDICATED_IMAGES['br-12'],
     name: 'كباب لحم 4 اسياخ',
     nameEn: 'Kebab meat',
     category: 'broasted',
@@ -185,6 +197,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-13',
+    image: ITEM_DEDICATED_IMAGES['br-13'],
     name: 'صحن فيليه عادي',
     nameEn: 'Regular fillet plate',
     category: 'broasted',
@@ -193,6 +206,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-14',
+    image: ITEM_DEDICATED_IMAGES['br-14'],
     name: 'صحن فيليه حراق',
     nameEn: 'Spicy fillet plate',
     category: 'broasted',
@@ -201,6 +215,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-15',
+    image: ITEM_DEDICATED_IMAGES['br-15'],
     name: 'مكسي فود',
     nameEn: 'Mexifood',
     category: 'broasted',
@@ -209,6 +224,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-16',
+    image: ITEM_DEDICATED_IMAGES['br-16'],
     name: 'صحن ثوم',
     nameEn: 'Garlic plate',
     category: 'broasted',
@@ -217,6 +233,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-17',
+    image: ITEM_DEDICATED_IMAGES['br-17'],
     name: 'مقبلات',
     nameEn: 'Appetizers',
     category: 'broasted',
@@ -230,6 +247,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-18',
+    image: ITEM_DEDICATED_IMAGES['br-18'],
     name: 'حمص',
     nameEn: 'Hummus',
     category: 'broasted',
@@ -238,6 +256,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-19',
+    image: ITEM_DEDICATED_IMAGES['br-19'],
     name: 'متبل',
     nameEn: 'Mutabal',
     category: 'broasted',
@@ -246,6 +265,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-20',
+    image: ITEM_DEDICATED_IMAGES['br-20'],
     name: 'سلطة خضرا',
     nameEn: 'Green salad',
     category: 'broasted',
@@ -254,6 +274,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-21',
+    image: ITEM_DEDICATED_IMAGES['br-21'],
     name: 'حبتين ثوم',
     nameEn: 'Hibatayn thawm',
     category: 'broasted',
@@ -262,6 +283,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-22',
+    image: ITEM_DEDICATED_IMAGES['br-22'],
     name: 'صحن ثوم صغير',
     nameEn: 'Small garlic dish',
     category: 'broasted',
@@ -270,6 +292,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-23',
+    image: ITEM_DEDICATED_IMAGES['br-23'],
     name: 'صحن صوص حار صغير',
     nameEn: 'Hot sauce dish',
     category: 'broasted',
@@ -278,6 +301,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'br-24',
+    image: ITEM_DEDICATED_IMAGES['br-24'],
     name: 'صحن بطاطس',
     nameEn: 'Potato plate',
     category: 'broasted',
@@ -290,6 +314,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'gr-1',
+    image: ITEM_DEDICATED_IMAGES['gr-1'],
     name: 'دجاج فحم مع الرز حبة',
     nameEn: 'Charcoal G Chicken with Rice',
     category: 'grilled',
@@ -298,6 +323,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-2',
+    image: ITEM_DEDICATED_IMAGES['gr-2'],
     name: 'دجاج فحم مع الرز نصف',
     nameEn: 'Half a CH. G. Chicken',
     category: 'grilled',
@@ -306,6 +332,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-3',
+    image: ITEM_DEDICATED_IMAGES['gr-3'],
     name: 'دجاج فحم سادة',
     nameEn: 'Plain CH. G. Chicken',
     category: 'grilled',
@@ -318,6 +345,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-4',
+    image: ITEM_DEDICATED_IMAGES['gr-4'],
     name: 'دجاج مضغوط حبة',
     nameEn: 'One CH. (Madghout)',
     category: 'grilled',
@@ -326,6 +354,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-5',
+    image: ITEM_DEDICATED_IMAGES['gr-5'],
     name: 'دجاج مضغوط نصف',
     nameEn: 'Half a Chicken (Madghout)',
     category: 'grilled',
@@ -334,6 +363,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-6',
+    image: ITEM_DEDICATED_IMAGES['gr-6'],
     name: 'رز ابيض سادة',
     nameEn: 'Plain White Rice',
     category: 'grilled',
@@ -342,6 +372,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-7',
+    image: ITEM_DEDICATED_IMAGES['gr-7'],
     name: 'رز بخاري',
     nameEn: 'Bukhari Rice',
     category: 'grilled',
@@ -350,6 +381,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-8',
+    image: ITEM_DEDICATED_IMAGES['gr-8'],
     name: 'مشكل خضار',
     nameEn: 'Mixed Vegetables',
     category: 'grilled',
@@ -358,6 +390,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-9',
+    image: ITEM_DEDICATED_IMAGES['gr-9'],
     name: 'بامية',
     nameEn: 'Okra',
     category: 'grilled',
@@ -366,6 +399,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-10',
+    image: ITEM_DEDICATED_IMAGES['gr-10'],
     name: 'ملوخية',
     nameEn: 'Molokhia',
     category: 'grilled',
@@ -374,6 +408,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-11',
+    image: ITEM_DEDICATED_IMAGES['gr-11'],
     name: 'خيار باللبن',
     nameEn: 'Cucumber with Yogurt',
     category: 'grilled',
@@ -382,6 +417,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-12',
+    image: ITEM_DEDICATED_IMAGES['gr-12'],
     name: 'مشكل فرن',
     nameEn: 'Oven Mix',
     category: 'grilled',
@@ -390,6 +426,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-13',
+    image: ITEM_DEDICATED_IMAGES['gr-13'],
     name: 'مصقعة باذنجان',
     nameEn: 'Eggplant Moussaka',
     category: 'grilled',
@@ -398,6 +435,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-14',
+    image: ITEM_DEDICATED_IMAGES['gr-14'],
     name: 'اوصال لحم',
     nameEn: 'Meat Awsal',
     category: 'grilled',
@@ -406,6 +444,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-15',
+    image: ITEM_DEDICATED_IMAGES['gr-15'],
     name: 'شيش طاووق',
     nameEn: 'Shish Tawook',
     category: 'grilled',
@@ -414,6 +453,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-16',
+    image: ITEM_DEDICATED_IMAGES['gr-16'],
     name: 'كباب لحم',
     nameEn: 'Meat Kebab',
     category: 'grilled',
@@ -422,6 +462,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-17',
+    image: ITEM_DEDICATED_IMAGES['gr-17'],
     name: 'كباب دجاج',
     nameEn: 'Chicken Kebab',
     category: 'grilled',
@@ -430,6 +471,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-18',
+    image: ITEM_DEDICATED_IMAGES['gr-18'],
     name: 'مشوي مشكل',
     nameEn: 'Mixed Grill',
     category: 'grilled',
@@ -438,6 +480,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'gr-19',
+    image: ITEM_DEDICATED_IMAGES['gr-19'],
     name: 'جميع انواع السمك',
     nameEn: 'All types of fish',
     category: 'grilled',
@@ -452,6 +495,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'sk-1',
+    image: ITEM_DEDICATED_IMAGES['sk-1'],
     name: 'اوصال لحم',
     nameEn: 'Meat skewers',
     category: 'skewers_kg',
@@ -465,6 +509,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sk-2',
+    image: ITEM_DEDICATED_IMAGES['sk-2'],
     name: 'شيش طاووق',
     nameEn: 'Shish tawook',
     category: 'skewers_kg',
@@ -478,6 +523,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sk-3',
+    image: ITEM_DEDICATED_IMAGES['sk-3'],
     name: 'كباب لحم',
     nameEn: 'Meat kebab',
     category: 'skewers_kg',
@@ -491,6 +537,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sk-4',
+    image: ITEM_DEDICATED_IMAGES['sk-4'],
     name: 'كباب دجاج',
     nameEn: 'Chicken kebab',
     category: 'skewers_kg',
@@ -504,6 +551,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sk-5',
+    image: ITEM_DEDICATED_IMAGES['sk-5'],
     name: 'كباب مشكل',
     nameEn: 'Mixed kebab',
     category: 'skewers_kg',
@@ -517,6 +565,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sk-6',
+    image: ITEM_DEDICATED_IMAGES['sk-6'],
     name: 'مشكل لحم',
     nameEn: 'Meat mix',
     category: 'skewers_kg',
@@ -530,6 +579,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sk-7',
+    image: ITEM_DEDICATED_IMAGES['sk-7'],
     name: 'مشكل دجاج',
     nameEn: 'Chicken mix',
     category: 'skewers_kg',
@@ -543,6 +593,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sk-8',
+    image: ITEM_DEDICATED_IMAGES['sk-8'],
     name: 'مشكل اوصال وشيش طاووق',
     nameEn: 'Mix awssal & shish',
     category: 'skewers_kg',
@@ -556,6 +607,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sk-9',
+    image: ITEM_DEDICATED_IMAGES['sk-9'],
     name: 'مشكل مشوي',
     nameEn: 'Mixed grill skewers',
     category: 'skewers_kg',
@@ -573,6 +625,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'ml-1',
+    image: ITEM_DEDICATED_IMAGES['ml-1'],
     name: 'وجبة زنجر دجاج على خبزترتيلا',
     nameEn: 'Chicken zinger meal on tortilla',
     category: 'meals',
@@ -581,6 +634,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-2',
+    image: ITEM_DEDICATED_IMAGES['ml-2'],
     name: 'وجبة سندويش فيليه حراق',
     nameEn: 'Breakfast spicy fillet sandwich',
     category: 'meals',
@@ -589,6 +643,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-3',
+    image: ITEM_DEDICATED_IMAGES['ml-3'],
     name: 'وجبة سندويش اصابع دجاج',
     nameEn: 'Chicken fingers sandwich meal',
     category: 'meals',
@@ -597,6 +652,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-4',
+    image: ITEM_DEDICATED_IMAGES['ml-4'],
     name: 'وجبة رول دجاج كرسبي',
     nameEn: 'Kasbi chicken roll meal',
     category: 'meals',
@@ -605,6 +661,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-5',
+    image: ITEM_DEDICATED_IMAGES['ml-5'],
     name: 'وجبة رول روبيان',
     nameEn: 'Shrimp breakfast roll',
     category: 'meals',
@@ -613,6 +670,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-6',
+    image: ITEM_DEDICATED_IMAGES['ml-6'],
     name: 'وجبة سمك',
     nameEn: 'Generous breakfast',
     category: 'meals',
@@ -621,6 +679,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-7',
+    image: ITEM_DEDICATED_IMAGES['ml-7'],
     name: 'وجبة برجر دجاج عادي',
     nameEn: 'Regular chicken burger breakfast',
     category: 'meals',
@@ -629,6 +688,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-8',
+    image: ITEM_DEDICATED_IMAGES['ml-8'],
     name: 'وجبة برجر لحم',
     nameEn: 'Beef burger meal',
     category: 'meals',
@@ -637,6 +697,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-9',
+    image: ITEM_DEDICATED_IMAGES['ml-9'],
     name: 'وجبة زنجر دجاج على خبز برجر',
     nameEn: 'Chicken zinger meal on burger bun',
     category: 'meals',
@@ -645,6 +706,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-10',
+    image: ITEM_DEDICATED_IMAGES['ml-10'],
     name: 'وجبة برجر دجاج طازج',
     nameEn: 'Fresh chicken burger meal',
     category: 'meals',
@@ -653,6 +715,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-11',
+    image: ITEM_DEDICATED_IMAGES['ml-11'],
     name: 'وجبة كباب لحم',
     nameEn: 'Meat kebab meal',
     category: 'meals',
@@ -661,6 +724,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-12',
+    image: ITEM_DEDICATED_IMAGES['ml-12'],
     name: 'وجبة كباب دجاج',
     nameEn: 'Chicken kebab meal',
     category: 'meals',
@@ -669,6 +733,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ml-13',
+    image: ITEM_DEDICATED_IMAGES['ml-13'],
     name: 'وجبة برجر سمك',
     nameEn: 'Thick burger meal',
     category: 'meals',
@@ -681,6 +746,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'sh-1',
+    image: ITEM_DEDICATED_IMAGES['sh-1'],
     name: 'سندويش شاورما صغير',
     nameEn: 'Small Shawarma',
     category: 'shawarma',
@@ -689,6 +755,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-2',
+    image: ITEM_DEDICATED_IMAGES['sh-2'],
     name: 'سندويش شاورما صاروخ',
     nameEn: 'Rocket Shawarma',
     category: 'shawarma',
@@ -698,6 +765,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-3',
+    image: ITEM_DEDICATED_IMAGES['sh-3'],
     name: 'سندويش شاورما صغير جبن',
     nameEn: 'Small Cheese Shawarma',
     category: 'shawarma',
@@ -706,6 +774,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-4',
+    image: ITEM_DEDICATED_IMAGES['sh-4'],
     name: 'سندويش شاورما صاروخ جبن',
     nameEn: 'Rocket Cheese Shawarma',
     category: 'shawarma',
@@ -714,6 +783,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-5',
+    image: ITEM_DEDICATED_IMAGES['sh-5'],
     name: 'شاورما تست',
     nameEn: 'Shawarma Test',
     category: 'shawarma',
@@ -722,6 +792,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-6',
+    image: ITEM_DEDICATED_IMAGES['sh-6'],
     name: 'شاورما تست مع الجبن',
     nameEn: 'Shawarma Test Cheese',
     category: 'shawarma',
@@ -730,6 +801,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-7',
+    image: ITEM_DEDICATED_IMAGES['sh-7'],
     name: 'برجر شاورما',
     nameEn: 'Shawarma Burger',
     category: 'shawarma',
@@ -738,6 +810,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-8',
+    image: ITEM_DEDICATED_IMAGES['sh-8'],
     name: 'برجر شاورما جبن',
     nameEn: 'Cheese Shawarma Burger',
     category: 'shawarma',
@@ -746,6 +819,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-9',
+    image: ITEM_DEDICATED_IMAGES['sh-9'],
     name: 'صحن عربي',
     nameEn: 'Arabic Platter',
     category: 'shawarma',
@@ -754,6 +828,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-10',
+    image: ITEM_DEDICATED_IMAGES['sh-10'],
     name: 'صحن عربي جبن',
     nameEn: 'Arabic Platter Cheese',
     category: 'shawarma',
@@ -762,6 +837,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-11',
+    image: ITEM_DEDICATED_IMAGES['sh-11'],
     name: 'صحن عربي دبل',
     nameEn: 'Double Arabic Platter',
     category: 'shawarma',
@@ -770,6 +846,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-12',
+    image: ITEM_DEDICATED_IMAGES['sh-12'],
     name: 'صحن عربي دبل جبن',
     nameEn: 'Double Cheese Arabic',
     category: 'shawarma',
@@ -778,6 +855,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-13',
+    image: ITEM_DEDICATED_IMAGES['sh-13'],
     name: 'صحن شرحات صغير',
     nameEn: 'Small Chicken Strips',
     category: 'shawarma',
@@ -786,6 +864,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-14',
+    image: ITEM_DEDICATED_IMAGES['sh-14'],
     name: 'صحن شرحات وسط',
     nameEn: 'Medium Chicken Strips',
     category: 'shawarma',
@@ -794,6 +873,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sh-15',
+    image: ITEM_DEDICATED_IMAGES['sh-15'],
     name: 'صحن شرحات كبير',
     nameEn: 'Large Chicken Strips',
     category: 'shawarma',
@@ -806,6 +886,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'sw-1',
+    image: ITEM_DEDICATED_IMAGES['sw-1'],
     name: 'زنجر دجاج على خبزترتيلا',
     nameEn: 'Chicken Zinger on Tortilla Burger',
     category: 'sandwiches',
@@ -814,6 +895,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-2',
+    image: ITEM_DEDICATED_IMAGES['sw-2'],
     name: 'سندويش فيليه حراق',
     nameEn: 'Spicy Fillet Sandwich',
     category: 'sandwiches',
@@ -822,6 +904,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-3',
+    image: ITEM_DEDICATED_IMAGES['sw-3'],
     name: 'سندويش فيليه عادي',
     nameEn: 'Regular Fillet Sandwich',
     category: 'sandwiches',
@@ -830,6 +913,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-4',
+    image: ITEM_DEDICATED_IMAGES['sw-4'],
     name: 'سندويش اصابع دجاج',
     nameEn: 'Chicken Finger Sandwich',
     category: 'sandwiches',
@@ -838,6 +922,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-5',
+    image: ITEM_DEDICATED_IMAGES['sw-5'],
     name: 'رول دجاج كرسبي',
     nameEn: 'Crispy Chicken Roll',
     category: 'sandwiches',
@@ -846,6 +931,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-6',
+    image: ITEM_DEDICATED_IMAGES['sw-6'],
     name: 'رول روبيان',
     nameEn: 'Shrimp Roll',
     category: 'sandwiches',
@@ -854,6 +940,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-7',
+    image: ITEM_DEDICATED_IMAGES['sw-7'],
     name: 'رول سمك',
     nameEn: 'Fish Roll',
     category: 'sandwiches',
@@ -862,6 +949,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-8',
+    image: ITEM_DEDICATED_IMAGES['sw-8'],
     name: 'برجر دجاج طازج مشوي',
     nameEn: 'Fresh Grilled Chicken Burger',
     category: 'sandwiches',
@@ -870,6 +958,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-9',
+    image: ITEM_DEDICATED_IMAGES['sw-9'],
     name: 'برجر لحم بقري طازج مشوي',
     nameEn: 'Fresh Grilled Beef Burger',
     category: 'sandwiches',
@@ -878,6 +967,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-10',
+    image: ITEM_DEDICATED_IMAGES['sw-10'],
     name: 'برجر لحم غنم طازج مشوي',
     nameEn: 'Fresh Grilled Lamb Burger',
     category: 'sandwiches',
@@ -886,6 +976,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-11',
+    image: ITEM_DEDICATED_IMAGES['sw-11'],
     name: 'برجر دجاج عادي',
     nameEn: 'Regular Chicken Burger',
     category: 'sandwiches',
@@ -894,6 +985,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-12',
+    image: ITEM_DEDICATED_IMAGES['sw-12'],
     name: 'برجر لحم عادي',
     nameEn: 'Regular Beef Burger',
     category: 'sandwiches',
@@ -902,6 +994,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-13',
+    image: ITEM_DEDICATED_IMAGES['sw-13'],
     name: 'زنجر دجاج على خبز برجر',
     nameEn: 'Chicken Zinger on Burger Bun',
     category: 'sandwiches',
@@ -910,6 +1003,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-14',
+    image: ITEM_DEDICATED_IMAGES['sw-14'],
     name: 'برجر دجاج طازج',
     nameEn: 'Fresh Chicken Burger',
     category: 'sandwiches',
@@ -918,6 +1012,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-15',
+    image: ITEM_DEDICATED_IMAGES['sw-15'],
     name: 'كباب لحم',
     nameEn: 'Meat Kebab',
     category: 'sandwiches',
@@ -926,6 +1021,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-16',
+    image: ITEM_DEDICATED_IMAGES['sw-16'],
     name: 'كباب دجاج',
     nameEn: 'Chicken Kebab',
     category: 'sandwiches',
@@ -934,6 +1030,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-17',
+    image: ITEM_DEDICATED_IMAGES['sw-17'],
     name: 'برجر سمك',
     nameEn: 'Fish Burger',
     category: 'sandwiches',
@@ -942,6 +1039,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-18',
+    image: ITEM_DEDICATED_IMAGES['sw-18'],
     name: 'اصابع برجر',
     nameEn: 'Burger Fingers',
     category: 'sandwiches',
@@ -950,6 +1048,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-19',
+    image: ITEM_DEDICATED_IMAGES['sw-19'],
     name: 'بطاطس كرسبي كبير',
     nameEn: 'Large Crispy Fries',
     category: 'sandwiches',
@@ -958,6 +1057,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-20',
+    image: ITEM_DEDICATED_IMAGES['sw-20'],
     name: 'صحن بطاطس صغير',
     nameEn: 'Small Fries Plate',
     category: 'sandwiches',
@@ -966,6 +1066,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-21',
+    image: ITEM_DEDICATED_IMAGES['sw-21'],
     name: 'صحن بطاطس كبير',
     nameEn: 'Large Fries Plate',
     category: 'sandwiches',
@@ -974,6 +1075,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-22',
+    image: ITEM_DEDICATED_IMAGES['sw-22'],
     name: 'بطاطس كرسبي جبن',
     nameEn: 'Crispy Cheese Fries',
     category: 'sandwiches',
@@ -982,6 +1084,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-23',
+    image: ITEM_DEDICATED_IMAGES['sw-23'],
     name: 'صحن بطاطس صغير جبن',
     nameEn: 'Plate Small potato cheese',
     category: 'sandwiches',
@@ -990,6 +1093,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-24',
+    image: ITEM_DEDICATED_IMAGES['sw-24'],
     name: 'صحن بطاطس كبير جبن',
     nameEn: 'Large potato with cheese',
     category: 'sandwiches',
@@ -998,6 +1102,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-25',
+    image: ITEM_DEDICATED_IMAGES['sw-25'],
     name: 'كباب لحم (ساندويش)',
     nameEn: 'Meat kebab',
     category: 'sandwiches',
@@ -1006,6 +1111,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-26',
+    image: ITEM_DEDICATED_IMAGES['sw-26'],
     name: 'كباب دجاج (ساندويش)',
     nameEn: 'Chicken kebab',
     category: 'sandwiches',
@@ -1014,6 +1120,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-27',
+    image: ITEM_DEDICATED_IMAGES['sw-27'],
     name: 'اوصال لحم (ساندويش)',
     nameEn: 'Meat skewers',
     category: 'sandwiches',
@@ -1022,6 +1129,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'sw-28',
+    image: ITEM_DEDICATED_IMAGES['sw-28'],
     name: 'شيش طاووق (ساندويش)',
     nameEn: 'Shish tawook',
     category: 'sandwiches',
@@ -1035,6 +1143,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'pz-1',
+    image: ITEM_DEDICATED_IMAGES['pz-1'],
     name: 'بيتزا باللحم',
     nameEn: 'Meat Pizza',
     category: 'pizza',
@@ -1048,6 +1157,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-2',
+    image: ITEM_DEDICATED_IMAGES['pz-2'],
     name: 'بيتزا دجاج',
     nameEn: 'Chicken Pizza',
     category: 'pizza',
@@ -1061,6 +1171,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-3',
+    image: ITEM_DEDICATED_IMAGES['pz-3'],
     name: 'بيتزا مشكل',
     nameEn: 'Mixed Pizza',
     category: 'pizza',
@@ -1074,6 +1185,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-4',
+    image: ITEM_DEDICATED_IMAGES['pz-4'],
     name: 'بيتزا نقانق',
     nameEn: 'Sausage Pizza',
     category: 'pizza',
@@ -1087,6 +1199,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-5',
+    image: ITEM_DEDICATED_IMAGES['pz-5'],
     name: 'عش البلبل',
     nameEn: "Bird's Nest",
     category: 'pizza',
@@ -1100,6 +1213,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-6',
+    image: ITEM_DEDICATED_IMAGES['pz-6'],
     name: 'لبنة عسل',
     nameEn: 'Labneh with Honey',
     category: 'pizza',
@@ -1113,6 +1227,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-7',
+    image: ITEM_DEDICATED_IMAGES['pz-7'],
     name: 'عش البلبل بالزيتون',
     nameEn: "Bird's Nest with Olives",
     category: 'pizza',
@@ -1126,6 +1241,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-8',
+    image: ITEM_DEDICATED_IMAGES['pz-8'],
     name: 'بيتزا خضار',
     nameEn: 'Vegetable Pizza',
     category: 'pizza',
@@ -1139,6 +1255,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-9',
+    image: ITEM_DEDICATED_IMAGES['pz-9'],
     name: 'بيتزا جبن موزريلا',
     nameEn: 'Mozzarella Cheese Pizza',
     category: 'pizza',
@@ -1152,6 +1269,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-10',
+    image: ITEM_DEDICATED_IMAGES['pz-10'],
     name: 'بيتزا جبن سائل',
     nameEn: 'Liquid Cheese Pizza',
     category: 'pizza',
@@ -1165,6 +1283,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-11',
+    image: ITEM_DEDICATED_IMAGES['pz-11'],
     name: 'بيتزا بيض جبن',
     nameEn: 'Egg Cheese Pizza',
     category: 'pizza',
@@ -1178,6 +1297,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-12',
+    image: ITEM_DEDICATED_IMAGES['pz-12'],
     name: 'زعتر جبن',
     nameEn: 'Zaatar Cheese Pizza',
     category: 'pizza',
@@ -1191,6 +1311,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-13',
+    image: ITEM_DEDICATED_IMAGES['pz-13'],
     name: 'بيتزا زعتر ساده',
     nameEn: 'Plain Zaatar Pizza',
     category: 'pizza',
@@ -1204,6 +1325,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-14',
+    image: ITEM_DEDICATED_IMAGES['pz-14'],
     name: 'بيتزا لبنة زعتر',
     nameEn: 'Labneh Zaatar Pizza',
     category: 'pizza',
@@ -1217,6 +1339,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-15',
+    image: ITEM_DEDICATED_IMAGES['pz-15'],
     name: 'بيتزا شاورما',
     nameEn: 'Shawarma Pizza',
     category: 'pizza',
@@ -1230,6 +1353,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-16',
+    image: ITEM_DEDICATED_IMAGES['pz-16'],
     name: 'بيتزا تونا',
     nameEn: 'Tuna Pizza',
     category: 'pizza',
@@ -1243,6 +1367,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-17',
+    image: ITEM_DEDICATED_IMAGES['pz-17'],
     name: 'بيتزا سبيشل',
     nameEn: 'Special Pizza',
     category: 'pizza',
@@ -1257,6 +1382,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-18',
+    image: ITEM_DEDICATED_IMAGES['pz-18'],
     name: 'بيتزا بيروني',
     nameEn: 'Pepperoni Pizza',
     category: 'pizza',
@@ -1270,6 +1396,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-19',
+    image: ITEM_DEDICATED_IMAGES['pz-19'],
     name: 'بيتزا خضار مع بيروني',
     nameEn: 'Vegetable Pizza Pepperoni',
     category: 'pizza',
@@ -1283,6 +1410,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-20',
+    image: ITEM_DEDICATED_IMAGES['pz-20'],
     name: 'بيتزا رنش',
     nameEn: 'Ranch Pizza',
     category: 'pizza',
@@ -1296,6 +1424,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-21',
+    image: ITEM_DEDICATED_IMAGES['pz-21'],
     name: 'بيتزا باربيكيو',
     nameEn: 'Barbecue Pizza',
     category: 'pizza',
@@ -1309,6 +1438,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-22',
+    image: ITEM_DEDICATED_IMAGES['pz-22'],
     name: 'بيتزا باربيكيو رنش',
     nameEn: 'Barbecue Ranch Pizza',
     category: 'pizza',
@@ -1322,6 +1452,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pz-23',
+    image: ITEM_DEDICATED_IMAGES['pz-23'],
     name: 'بيتزا ديناميت',
     nameEn: 'Dynamite Pizza',
     category: 'pizza',
@@ -1339,6 +1470,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'pa-1',
+    image: ITEM_DEDICATED_IMAGES['pa-1'],
     name: 'باستاء دجاج',
     nameEn: 'Chicken pasta',
     category: 'pasta',
@@ -1352,6 +1484,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pa-2',
+    image: ITEM_DEDICATED_IMAGES['pa-2'],
     name: 'باستاء لحم',
     nameEn: 'Meat pasta',
     category: 'pasta',
@@ -1365,6 +1498,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pa-3',
+    image: ITEM_DEDICATED_IMAGES['pa-3'],
     name: 'باستاء نقانق',
     nameEn: 'Sausage pasta',
     category: 'pasta',
@@ -1378,6 +1512,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pa-4',
+    image: ITEM_DEDICATED_IMAGES['pa-4'],
     name: 'باستاء خضار',
     nameEn: 'Vegetable pasta',
     category: 'pasta',
@@ -1395,6 +1530,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'pi-1',
+    image: ITEM_DEDICATED_IMAGES['pi-1'],
     name: 'فهتي الدجاج',
     category: 'pies',
     price: 8,
@@ -1402,6 +1538,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-2',
+    image: ITEM_DEDICATED_IMAGES['pi-2'],
     name: 'دجاج سادة',
     category: 'pies',
     price: 7,
@@ -1409,6 +1546,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-3',
+    image: ITEM_DEDICATED_IMAGES['pi-3'],
     name: 'لحم مفروم بالجبن',
     category: 'pies',
     price: 8,
@@ -1416,6 +1554,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-4',
+    image: ITEM_DEDICATED_IMAGES['pi-4'],
     name: 'جبن بيض',
     category: 'pies',
     price: 7,
@@ -1423,6 +1562,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-5',
+    image: ITEM_DEDICATED_IMAGES['pi-5'],
     name: 'جبن نقانق',
     category: 'pies',
     price: 7,
@@ -1430,6 +1570,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-6',
+    image: ITEM_DEDICATED_IMAGES['pi-6'],
     name: 'دجاج بالبيض',
     category: 'pies',
     price: 8,
@@ -1437,6 +1578,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-7',
+    image: ITEM_DEDICATED_IMAGES['pi-7'],
     name: 'لبنة سادة',
     category: 'pies',
     price: 6,
@@ -1444,6 +1586,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-8',
+    image: ITEM_DEDICATED_IMAGES['pi-8'],
     name: 'لبنة بالجبن',
     category: 'pies',
     price: 7,
@@ -1451,6 +1594,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-9',
+    image: ITEM_DEDICATED_IMAGES['pi-9'],
     name: 'لبنة بالزعتر',
     category: 'pies',
     price: 7,
@@ -1458,6 +1602,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-10',
+    image: ITEM_DEDICATED_IMAGES['pi-10'],
     name: 'لبنة بالزيتون',
     category: 'pies',
     price: 7,
@@ -1465,6 +1610,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-11',
+    image: ITEM_DEDICATED_IMAGES['pi-11'],
     name: 'لبنة بالعسل',
     category: 'pies',
     price: 7,
@@ -1472,6 +1618,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-12',
+    image: ITEM_DEDICATED_IMAGES['pi-12'],
     name: 'لبنة بالخضار',
     category: 'pies',
     price: 8,
@@ -1479,6 +1626,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-13',
+    image: ITEM_DEDICATED_IMAGES['pi-13'],
     name: 'جبن ساده',
     category: 'pies',
     price: 6,
@@ -1486,6 +1634,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-14',
+    image: ITEM_DEDICATED_IMAGES['pi-14'],
     name: 'جبن موزريلا',
     category: 'pies',
     price: 7,
@@ -1493,6 +1642,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-15',
+    image: ITEM_DEDICATED_IMAGES['pi-15'],
     name: 'جبن مكس',
     category: 'pies',
     price: 8,
@@ -1500,6 +1650,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-16',
+    image: ITEM_DEDICATED_IMAGES['pi-16'],
     name: 'جبن بالزعتر',
     category: 'pies',
     price: 7,
@@ -1507,6 +1658,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-17',
+    image: ITEM_DEDICATED_IMAGES['pi-17'],
     name: 'جبن بالزيتون',
     category: 'pies',
     price: 5,
@@ -1514,6 +1666,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-18',
+    image: ITEM_DEDICATED_IMAGES['pi-18'],
     name: 'جبن بالخضار',
     category: 'pies',
     price: 7,
@@ -1521,6 +1674,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-19',
+    image: ITEM_DEDICATED_IMAGES['pi-19'],
     name: 'فطيرة لحم جبن',
     category: 'pies',
     price: 7,
@@ -1528,6 +1682,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-20',
+    image: ITEM_DEDICATED_IMAGES['pi-20'],
     name: 'زعتر ساده',
     category: 'pies',
     price: 5,
@@ -1535,6 +1690,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-21',
+    image: ITEM_DEDICATED_IMAGES['pi-21'],
     name: 'زعتر خضار',
     category: 'pies',
     price: 7,
@@ -1542,6 +1698,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-22',
+    image: ITEM_DEDICATED_IMAGES['pi-22'],
     name: 'زعتر بالجبن',
     category: 'pies',
     price: 7,
@@ -1549,6 +1706,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-23',
+    image: ITEM_DEDICATED_IMAGES['pi-23'],
     name: 'زعتر موزريلا',
     category: 'pies',
     price: 7,
@@ -1556,6 +1714,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-24',
+    image: ITEM_DEDICATED_IMAGES['pi-24'],
     name: 'جبن عكاوي',
     category: 'pies',
     price: 7,
@@ -1563,6 +1722,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-25',
+    image: ITEM_DEDICATED_IMAGES['pi-25'],
     name: 'سبانخ',
     category: 'pies',
     price: 7,
@@ -1570,6 +1730,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-26',
+    image: ITEM_DEDICATED_IMAGES['pi-26'],
     name: 'محمره',
     category: 'pies',
     price: 7,
@@ -1577,6 +1738,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-27',
+    image: ITEM_DEDICATED_IMAGES['pi-27'],
     name: 'قشطه',
     category: 'pies',
     price: 7,
@@ -1584,6 +1746,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-28',
+    image: ITEM_DEDICATED_IMAGES['pi-28'],
     name: 'فطاير مشكل كبير',
     category: 'pies',
     price: 55,
@@ -1591,6 +1754,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'pi-29',
+    image: ITEM_DEDICATED_IMAGES['pi-29'],
     name: 'فطاير مشكل صغير',
     category: 'pies',
     price: 30,
@@ -1603,6 +1767,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'ju-1',
+    image: ITEM_DEDICATED_IMAGES['ju-1'],
     name: 'فافخينة',
     nameEn: 'Fafkhina',
     category: 'juices',
@@ -1616,6 +1781,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-2',
+    image: ITEM_DEDICATED_IMAGES['ju-2'],
     name: 'عورقلب',
     nameEn: 'One-eyed heart',
     category: 'juices',
@@ -1630,6 +1796,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-3',
+    image: ITEM_DEDICATED_IMAGES['ju-3'],
     name: 'طبقات',
     nameEn: 'Layers',
     category: 'juices',
@@ -1643,6 +1810,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-4',
+    image: ITEM_DEDICATED_IMAGES['ju-4'],
     name: 'عرايسي',
     nameEn: 'My brides',
     category: 'juices',
@@ -1656,6 +1824,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-5',
+    image: ITEM_DEDICATED_IMAGES['ju-5'],
     name: 'اصفهاني',
     nameEn: 'Isfahani',
     category: 'juices',
@@ -1669,6 +1838,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-6',
+    image: ITEM_DEDICATED_IMAGES['ju-6'],
     name: 'شمندر',
     nameEn: 'Beet',
     category: 'juices',
@@ -1682,6 +1852,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-7',
+    image: ITEM_DEDICATED_IMAGES['ju-7'],
     name: 'فراولة حليب',
     nameEn: 'Strawberry milk',
     category: 'juices',
@@ -1695,6 +1866,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-8',
+    image: ITEM_DEDICATED_IMAGES['ju-8'],
     name: 'حبحب',
     nameEn: 'Love it',
     category: 'juices',
@@ -1708,6 +1880,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-9',
+    image: ITEM_DEDICATED_IMAGES['ju-9'],
     name: 'موز',
     nameEn: 'Banana',
     category: 'juices',
@@ -1721,6 +1894,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-10',
+    image: ITEM_DEDICATED_IMAGES['ju-10'],
     name: 'موز حليب',
     nameEn: 'Banana milk',
     category: 'juices',
@@ -1734,6 +1908,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-11',
+    image: ITEM_DEDICATED_IMAGES['ju-11'],
     name: 'شمام',
     nameEn: 'Melon',
     category: 'juices',
@@ -1747,6 +1922,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-12',
+    image: ITEM_DEDICATED_IMAGES['ju-12'],
     name: 'افكادو',
     nameEn: 'Avacado',
     category: 'juices',
@@ -1760,6 +1936,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-13',
+    image: ITEM_DEDICATED_IMAGES['ju-13'],
     name: 'افكادومانجو',
     nameEn: 'Afkadomango',
     category: 'juices',
@@ -1773,6 +1950,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-14',
+    image: ITEM_DEDICATED_IMAGES['ju-14'],
     name: 'زنجبيل ليمون',
     nameEn: 'Lemon ginger',
     category: 'juices',
@@ -1786,6 +1964,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-15',
+    image: ITEM_DEDICATED_IMAGES['ju-15'],
     name: 'تفاح',
     nameEn: 'Apples',
     category: 'juices',
@@ -1799,6 +1978,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-16',
+    image: ITEM_DEDICATED_IMAGES['ju-16'],
     name: 'برتقال ليمون',
     nameEn: 'Lemon orange',
     category: 'juices',
@@ -1812,6 +1992,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-17',
+    image: ITEM_DEDICATED_IMAGES['ju-17'],
     name: 'مانجو طازج',
     nameEn: 'Fresh mango',
     category: 'juices',
@@ -1826,6 +2007,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-18',
+    image: ITEM_DEDICATED_IMAGES['ju-18'],
     name: 'مانجو حليب طازج',
     nameEn: 'Mango milk',
     category: 'juices',
@@ -1840,6 +2022,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-19',
+    image: ITEM_DEDICATED_IMAGES['ju-19'],
     name: 'كوكتيل',
     nameEn: 'Cocktail',
     category: 'juices',
@@ -1854,6 +2037,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-20',
+    image: ITEM_DEDICATED_IMAGES['ju-20'],
     name: 'رمان',
     nameEn: 'Pomegranate',
     category: 'juices',
@@ -1867,6 +2051,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-21',
+    image: ITEM_DEDICATED_IMAGES['ju-21'],
     name: 'جوافة',
     nameEn: 'Guava',
     category: 'juices',
@@ -1881,6 +2066,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-22',
+    image: ITEM_DEDICATED_IMAGES['ju-22'],
     name: 'برتقال كبس',
     nameEn: 'Pressed orange',
     category: 'juices',
@@ -1895,6 +2081,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-23',
+    image: ITEM_DEDICATED_IMAGES['ju-23'],
     name: 'برتقال خلاط',
     nameEn: 'Orange blender',
     category: 'juices',
@@ -1909,6 +2096,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-24',
+    image: ITEM_DEDICATED_IMAGES['ju-24'],
     name: 'فيمتو',
     nameEn: 'Vimto',
     category: 'juices',
@@ -1922,6 +2110,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-25',
+    image: ITEM_DEDICATED_IMAGES['ju-25'],
     name: 'تانج',
     nameEn: 'Tang',
     category: 'juices',
@@ -1935,6 +2124,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-26',
+    image: ITEM_DEDICATED_IMAGES['ju-26'],
     name: 'كركدي',
     nameEn: 'Karkdy',
     category: 'juices',
@@ -1948,6 +2138,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-27',
+    image: ITEM_DEDICATED_IMAGES['ju-27'],
     name: 'ليمون',
     nameEn: 'Lemon',
     category: 'juices',
@@ -1961,6 +2152,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-28',
+    image: ITEM_DEDICATED_IMAGES['ju-28'],
     name: 'ليمون نعناع',
     nameEn: 'Lemon mint',
     category: 'juices',
@@ -1974,6 +2166,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-29',
+    image: ITEM_DEDICATED_IMAGES['ju-29'],
     name: 'كيوي',
     nameEn: 'Kiwi',
     category: 'juices',
@@ -1987,6 +2180,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-30',
+    image: ITEM_DEDICATED_IMAGES['ju-30'],
     name: 'اناناس',
     nameEn: 'Pineapple',
     category: 'juices',
@@ -2000,6 +2194,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-31',
+    image: ITEM_DEDICATED_IMAGES['ju-31'],
     name: 'عصير ربيع',
     nameEn: 'Rabea juice water',
     category: 'juices',
@@ -2008,6 +2203,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-32',
+    image: ITEM_DEDICATED_IMAGES['ju-32'],
     name: 'ماء',
     nameEn: 'Water',
     category: 'juices',
@@ -2016,6 +2212,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'ju-33',
+    image: ITEM_DEDICATED_IMAGES['ju-33'],
     name: 'بيبسي',
     nameEn: 'Pepsi',
     category: 'juices',
@@ -2029,6 +2226,7 @@ export const MENU_ITEMS: MenuItem[] = [
   // ==========================================
   {
     id: 'hd-1',
+    image: ITEM_DEDICATED_IMAGES['hd-1'],
     name: 'نسكافي حليب',
     nameEn: 'Nescafemilk',
     category: 'hot_drinks',
@@ -2041,6 +2239,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'hd-2',
+    image: ITEM_DEDICATED_IMAGES['hd-2'],
     name: 'نسكافي ساده',
     nameEn: 'Plain Nescafe',
     category: 'hot_drinks',
@@ -2053,6 +2252,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'hd-3',
+    image: ITEM_DEDICATED_IMAGES['hd-3'],
     name: 'حليب عدني',
     nameEn: 'Adani milk',
     category: 'hot_drinks',
@@ -2065,6 +2265,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'hd-4',
+    image: ITEM_DEDICATED_IMAGES['hd-4'],
     name: 'حليب كرك',
     nameEn: 'Karak milk',
     category: 'hot_drinks',
@@ -2077,6 +2278,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'hd-5',
+    image: ITEM_DEDICATED_IMAGES['hd-5'],
     name: 'شاي حليب',
     nameEn: 'Milk tea',
     category: 'hot_drinks',
@@ -2089,6 +2291,7 @@ export const MENU_ITEMS: MenuItem[] = [
   },
   {
     id: 'hd-6',
+    image: ITEM_DEDICATED_IMAGES['hd-6'],
     name: 'شاي ساده',
     nameEn: 'Plain tea',
     category: 'hot_drinks',

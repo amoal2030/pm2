@@ -81,7 +81,7 @@ export const CustomImagesProvider: React.FC<{ children: React.ReactNode }> = ({ 
       if (customImages[item.id]) {
         return customImages[item.id];
       }
-      return getItemDedicatedImage(item);
+      return item.image || getItemDedicatedImage(item);
     },
     [customImages]
   );

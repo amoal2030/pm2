@@ -47,7 +47,7 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
 
   if (!item) return null;
 
-  const imageUrl = getImage(item);
+  const imageUrl = item.image || getImage(item);
   const currentUnitPrice = selectedVariant ? selectedVariant.price : item.price;
   const currentTotalPrice = currentUnitPrice * quantity;
   const categoryObj = CATEGORIES.find((c) => c.id === item.category);

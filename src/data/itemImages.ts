@@ -1,23 +1,24 @@
 import { MenuItem, CategoryId } from './menuData';
 import localGeneratedMapRaw from './localGeneratedImages.json';
 import { JUICE_EXACT_IMAGES } from './juiceImagesMap';
+import { USER_PROVIDED_IMAGES } from './userCustomImagesMap';
 
 const BASE = (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) || '/';
 const LOCAL_GENERATED_IMAGES: Record<string, string> = localGeneratedMapRaw || {};
 
 // Category local fallback images
 export const CATEGORY_FALLBACKS: Record<CategoryId, string> = {
-  broasted: `${BASE}assets/images/broasted_chicken_hero_1792665160048.jpg`,
-  grilled: `${BASE}assets/images/mixed_grills_platter_1792665161760.jpg`,
-  skewers_kg: `${BASE}assets/images/mixed_grills_platter_1792665161760.jpg`,
-  meals: `${BASE}assets/images/fast_food_burger_meal_1792666977054.jpg`,
-  shawarma: `${BASE}assets/images/arabic_shawarma_plate_1792665161698.jpg`,
-  sandwiches: `${BASE}assets/images/fast_food_burger_meal_1792666977054.jpg`,
-  pizza: `${BASE}assets/images/pizza_italian_style_1792666976146.jpg`,
-  pasta: `${BASE}assets/images/creamy_pasta_bowl_1792666977207.jpg`,
-  pies: `${BASE}assets/images/savory_arabic_pies_1792666976945.jpg`,
-  juices: `${BASE}assets/images/fresh_natural_juices_1792665161919.jpg`,
-  hot_drinks: `${BASE}assets/images/traditional_karak_tea_1792667015269.jpg`,
+  broasted: 'https://images.deliveryhero.io/image/hungerstation/menuitem/image/155950?width=1440&quality=75&webp=true',
+  grilled: 'https://th.bing.com/th/id/OIP.hz6S8H2GI74Q_ddaBnC9dwHaE7?w=265&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
+  skewers_kg: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
+  meals: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80',
+  shawarma: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=800&q=80',
+  sandwiches: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80',
+  pizza: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80',
+  pasta: 'https://th.bing.com/th/id/OIP.zKJnE-RRT2a4zAT-pAw2aAHaE8?w=267&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
+  pies: 'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=800&q=80',
+  juices: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80',
+  hot_drinks: 'https://images.deliveryhero.io/image/hungerstation/restaurant/android_cover_photo/cbbce617baa96cc3ee1f06070f1ff8fb.jpg',
 };
 
 // Curated high-resolution food photography for all menu items
@@ -47,7 +48,7 @@ export const ITEM_DEDICATED_IMAGES: Record<string, string> = {
   'br-20': 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80', // سلطة خضرا
   'br-21': 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=700&q=80', // حبتين ثوم
   'br-22': 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=700&q=80', // صحن ثوم صغير
-  'br-23': 'https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=700&q=80', // صحن صوص حار صغير
+  'br-23': 'https://media.istockphoto.com/id/1308045603/photo/mustard-tasty-sauce-in-bowl-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=iZkVoByX_DD-z83CQlZqb2ZTsmgD66sBnelmX5LID7o=', // صحن صوص حار صغير
   'br-24': 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80', // صحن بطاطس
 
   // ==========================================
@@ -65,7 +66,7 @@ export const ITEM_DEDICATED_IMAGES: Record<string, string> = {
   'gr-10': 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80', // ملوخية
   'gr-11': 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=700&q=80', // خيار باللبن
   'gr-12': 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80', // مشكل فرن
-  'gr-13': 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=700&q=80', // مصقعة باذنجان
+  'gr-13': 'https://th.bing.com/th/id/OIP.Shjvo5RDuf2Yna_U1dEWNwHaD4?w=328&h=180&c=7&r=0&o=7&pid=1.7&rm=3', // مسقعة باذنجان
   'gr-14': 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=700&q=80', // اوصال لحم
   'gr-15': 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=700&q=80', // شيش طاووق
   'gr-16': 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=700&q=80', // كباب لحم
@@ -236,6 +237,11 @@ export const ITEM_DEDICATED_IMAGES: Record<string, string> = {
   'hd-4': 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=700&q=80', // حليب كرك
   'hd-5': 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=700&q=80', // شاي حليب
   'hd-6': 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=700&q=80', // شاي ساده
+
+  // ==========================================
+  // صور مخصصة من المستخدم (بروستد، مشويات، باستا، مشروبات ساخنة)
+  // ==========================================
+  ...USER_PROVIDED_IMAGES,
 };
 
 /**

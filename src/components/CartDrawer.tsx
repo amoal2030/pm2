@@ -1,9 +1,10 @@
 import React from 'react';
-import { X, Trash2, Plus, Minus, MessageCircle, ShoppingBag, ShieldCheck } from 'lucide-react';
+import { X, Trash2, Plus, Minus, MessageCircle, ShoppingBag, ShieldCheck, UtensilsCrossed } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageContext';
 import { useCustomImages } from '../context/CustomImagesContext';
 import { CATEGORIES } from '../data/menuData';
+import { CATEGORY_FALLBACKS } from '../data/itemImages';
 import { RESTAURANT_INFO } from '../data/restaurantInfo';
 
 export const CartDrawer: React.FC = () => {
@@ -35,6 +36,10 @@ export const CartDrawer: React.FC = () => {
     if (items.length === 0) return;
     const url = generateWhatsAppLink();
     window.open(url, '_blank');
+  };
+
+  const handleReturnToMenu = () => {
+    setIsCartOpen(false);
   };
 
   return (
@@ -108,7 +113,7 @@ export const CartDrawer: React.FC = () => {
                   {items.map((cartItem) => {
                     const itemTotal = (cartItem.quantity * cartItem.unitPrice).toFixed(0);
                     const itemName = isAr ? cartItem.item.name : (cartItem.item.nameEn || cartItem.item.name);
-                    const itemImg = getImage(cartItem.item);
+                    const itemImg = cartItem.item.image || getImage(cartItem.item);
                     const catObj = CATEGORIES.find((c) => c.id === cartItem.item.category);
 
                     return (
@@ -124,7 +129,7 @@ export const CartDrawer: React.FC = () => {
                               className="w-full h-full object-cover"
                               referrerPolicy="no-referrer"
                               onError={(e) => {
-                                const fallback = `${import.meta.env.BASE_URL}assets/images/broasted_chicken_hero_1792665160048.jpg`;
+                                const fallback = CATEGORY_FALLBACKS[cartItem.item.category] || CATEGORY_FALLBACKS.broasted;
                                 if (e.currentTarget.src !== fallback) {
                                   e.currentTarget.src = fallback;
                                 }
@@ -306,6 +311,16 @@ export const CartDrawer: React.FC = () => {
                     ? `إرسال الطلب عبر الواتساب (${RESTAURANT_INFO.whatsappFormatted})`
                     : `Send Order via WhatsApp (${RESTAURANT_INFO.whatsappFormatted})`}
                 </span>
+              </button>
+
+              {/* زر العودة إلى تصفح المنيو */}
+              <button
+                type="button"
+                onClick={handleReturnToMenu}
+                className="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700/80 text-slate-800 dark:text-neutral-100 border border-slate-200 dark:border-neutral-700 font-bold text-sm flex items-center justify-center gap-2 transition-all active:scale-98 cursor-pointer shadow-xs"
+              >
+                <UtensilsCrossed className="w-4 h-4 text-amber-500" />
+                <span>{isAr ? 'العودة إلى تصفح المنيو' : 'Return to Menu Browsing'}</span>
               </button>
 
               <p className="text-[11px] text-center text-slate-500 dark:text-neutral-500 leading-tight">

@@ -1,6 +1,9 @@
+import { MEALS_AND_SHAWARMA_IMAGES } from './mealsShawarmaImages';
+import { PIZZA_PIES_SKEWERS_IMAGES } from './pizzaPiesSkewersImages';
+
 /**
- * Custom images provided by user for Broasted, Grilled, Pasta, and Hot Drinks sections.
- * Source: Attachment /public/assets/aistudio/Paste_October_31__2026_-_2_12PM_b2ee2224
+ * Custom images provided by user for Broasted, Grilled, Pasta, Hot Drinks, Meals, and Shawarma sections.
+ * Source: Attachments including Paste_October_31 and Paste_November_04
  */
 export const USER_PROVIDED_IMAGES: Record<string, string> = {
   // ==========================================
@@ -147,4 +150,14 @@ export const USER_PROVIDED_IMAGES: Record<string, string> = {
   'hd-5': 'data:image/webp;base64,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',
   // 6. شاي ساده
   'hd-6': 'https://th.bing.com/th/id/OIP.R9ArL1q-_oO1N-KxCNwTCAHaGw?w=193&h=180&c=7&r=0&o=7&pid=1.7&rm=3',
+
+  // ==========================================
+  // قسم الوجبات السريعة والشاورما (28 صنفاً من المرفق الجديد)
+  // ==========================================
+  ...MEALS_AND_SHAWARMA_IMAGES,
+
+  // ==========================================
+  // قسم البيتزا والفطائر والمشاوي (61 صنفاً من المرفق الجديد)
+  // ==========================================
+  ...PIZZA_PIES_SKEWERS_IMAGES,
 };

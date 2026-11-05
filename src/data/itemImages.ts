@@ -2,6 +2,7 @@ import { MenuItem, CategoryId } from './menuData';
 import localGeneratedMapRaw from './localGeneratedImages.json';
 import { JUICE_EXACT_IMAGES } from './juiceImagesMap';
 import { USER_PROVIDED_IMAGES } from './userCustomImagesMap';
+import { MEALS_AND_SHAWARMA_IMAGES } from './mealsShawarmaImages';
 
 const BASE = (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) || '/';
 const LOCAL_GENERATED_IMAGES: Record<string, string> = localGeneratedMapRaw || {};
@@ -88,40 +89,10 @@ export const ITEM_DEDICATED_IMAGES: Record<string, string> = {
   'sk-9': 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=700&q=80', // مشكل مشوي
 
   // ==========================================
-  // 4. وجبات سريعة / MEALS (13 items)
+  // 4. وجبات سريعة / MEALS (13 items) & 5. شاورما / SHAWARMA (15 items)
+  // تم ربطها بروابط الصور المرفقة من المستخدم
   // ==========================================
-  'ml-1': 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=700&q=80', // وجبة زنجر دجاج على خبزترتيلا
-  'ml-2': 'https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=700&q=80', // وجبة سندويش فيليه حراق
-  'ml-3': 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=700&q=80', // وجبة سندويش اصابع دجاج
-  'ml-4': 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=700&q=80', // وجبة رول دجاج كرسبي
-  'ml-5': 'https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=700&q=80', // وجبة رول روبيان
-  'ml-6': 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=700&q=80', // وجبة سمك
-  'ml-7': 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=700&q=80', // وجبة برجر دجاج عادي
-  'ml-8': 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80', // وجبة برجر لحم
-  'ml-9': 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=700&q=80', // وجبة زنجر دجاج على خبز برجر
-  'ml-10': 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=700&q=80', // وجبة برجر دجاج طازج
-  'ml-11': 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=700&q=80', // وجبة كباب لحم
-  'ml-12': 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=700&q=80', // وجبة كباب دجاج
-  'ml-13': 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=700&q=80', // وجبة برجر سمك
-
-  // ==========================================
-  // 5. شاورما / SHAWARMA (15 items)
-  // ==========================================
-  'sh-1': 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80', // سندويش شاورما صغير
-  'sh-2': 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80', // سندويش شاورما صاروخ
-  'sh-3': 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=700&q=80', // سندويش شاورما صغير جبن
-  'sh-4': 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=700&q=80', // سندويش شاورما صاروخ جبن
-  'sh-5': 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80', // شاورما تست
-  'sh-6': 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=700&q=80', // شاورما تست مع الجبن
-  'sh-7': 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80', // برجر شاورما
-  'sh-8': 'https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=700&q=80', // برجر شاورما جبن
-  'sh-9': 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80', // صحن عربي
-  'sh-10': 'https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=700&q=80', // صحن عربي جبن
-  'sh-11': 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80', // صحن عربي دبل
-  'sh-12': 'https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=700&q=80', // صحن عربي دبل جبن
-  'sh-13': 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80', // صحن شرحات صغير
-  'sh-14': 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80', // صحن شرحات وسط
-  'sh-15': 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=700&q=80', // صحن شرحات كبير
+  ...MEALS_AND_SHAWARMA_IMAGES,
 
   // ==========================================
   // 6. ساندويشات / SANDWICHES (28 items)

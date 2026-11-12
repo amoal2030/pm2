@@ -891,6 +891,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Chicken Zinger on Tortilla Burger',
     category: 'sandwiches',
     price: 12,
+    description: 'قطع دجاج زنجر مقرمشة وحارة ملفوفة في خبز التورتيلا الطازج مع الخس والمايونيز والجبن.',
     calories: 230,
   },
   {
@@ -900,6 +901,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Spicy Fillet Sandwich',
     category: 'sandwiches',
     price: 12,
+    description: 'صدر دجاج فيليه متبل بالبهارات الحارة ومقلي، يقدم في خبز السندويش الطري مع الخس والصوص الحار.',
     calories: 244,
   },
   {
@@ -909,6 +911,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Regular Fillet Sandwich',
     category: 'sandwiches',
     price: 12,
+    description: 'صدر دجاج فيليه مقلي بتتبيلة كلاسيكية غير حارة، يقدم مع الخس الطازج والمايونيز في خبز طري.',
     calories: 245,
   },
   {
@@ -918,6 +921,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Chicken Finger Sandwich',
     category: 'sandwiches',
     price: 12,
+    description: 'أصابع دجاج مقلية ومقرمشة ذهبية اللون، محشوة داخل خبز السندويش مع البطاطس والصوص.',
     calories: 266,
   },
   {
@@ -927,6 +931,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Crispy Chicken Roll',
     category: 'sandwiches',
     price: 12,
+    description: 'شرائح دجاج كرسبي شديدة القرمشة ملفوفة في خبز الرول (أو الصاج) مع صوص الثوم أو الجبن والمخلل.',
     calories: 360,
   },
   {
@@ -936,6 +941,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Shrimp Roll',
     category: 'sandwiches',
     price: 12,
+    description: 'حبات روبيان مقلية ومقرمشة متبلة بعناية، ملفوفة في خبز الرول مع صوص التارتار أو الكوكتيل والخس.',
     calories: 125,
   },
   {
@@ -945,6 +951,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Fish Roll',
     category: 'sandwiches',
     price: 12,
+    description: 'قطع سمك فيليه طرية ومقلية بدون حسك، ملفوفة في خبز الرول مع الصوص الخاص والخضار.',
     calories: 212,
   },
   {
@@ -954,6 +961,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Fresh Grilled Chicken Burger',
     category: 'sandwiches',
     price: 12,
+    description: 'شريحة صدر دجاج طازجة مشوية على اللهب، تقدم في خبز البرجر بالسمسم مع الطماطم والخس والجبن.',
     calories: 215,
   },
   {
@@ -963,6 +971,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Fresh Grilled Beef Burger',
     category: 'sandwiches',
     price: 12,
+    description: 'شريحة لحم بقري طازجة مشوية غنية بالعصارة، تقدم في خبز البرجر مع شريحة جبن شيدر، مخلل، بصل، وصوص البرجر.',
     calories: 236,
   },
   {
@@ -972,6 +981,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Fresh Grilled Lamb Burger',
     category: 'sandwiches',
     price: 12,
+    description: 'شريحة لحم غنم محلي طازج مشوية بتتبيلة خاصة، تقدم في خبز البرجر مع الخضار الطازجة والجبن.',
     calories: 254,
   },
   {
@@ -981,6 +991,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Regular Chicken Burger',
     category: 'sandwiches',
     price: 7,
+    description: 'شريحة برجر دجاج مقلية كلاسيكية، تقدم في خبز البرجر مع الخس والمايونيز والكاتشب.',
     calories: 256,
   },
   {
@@ -990,6 +1001,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Regular Beef Burger',
     category: 'sandwiches',
     price: 7,
+    description: 'شريحة برجر لحم كلاسيكية على الصاج، تقدم في خبز البرجر مع الكاتشب والمايونيز والخس.',
     calories: 245,
   },
   {
@@ -999,6 +1011,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Chicken Zinger on Burger Bun',
     category: 'sandwiches',
     price: 10,
+    description: 'قطعة صدر دجاج زنجر سميكة ومقرمشة وحارة، تقدم داخل خبز البرجر الدائري مع الجبن والخس والمايونيز.',
     calories: 266,
   },
   {
@@ -1008,6 +1021,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Fresh Chicken Burger',
     category: 'sandwiches',
     price: 12,
+    description: 'برجر محضر من الدجاج المفروم أو الفيليه الطازج اليومي، يقدم في خبز البرجر مع الجبن والخضار.',
     calories: 233,
   },
   {
@@ -1017,6 +1031,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Meat Kebab',
     category: 'sandwiches',
     price: 10,
+    description: 'سيخ كباب لحم مفروم مشوي على الفحم، ملفوف في خبز (عربي أو صامولي) مع البقدونس، البصل، الطماطم، والطحينة.',
     calories: 265,
   },
   {
@@ -1026,6 +1041,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Chicken Kebab',
     category: 'sandwiches',
     price: 10,
+    description: 'سيخ كباب دجاج مفروم ومتبل مشوي على الفحم، يقدم في خبز السندويش مع صوص الثوم، المخلل، والبطاطس.',
     calories: 231,
   },
   {
@@ -1035,6 +1051,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Fish Burger',
     category: 'sandwiches',
     price: 14,
+    description: 'شريحة فيليه سمك مقرمشة ذهبية، تقدم في خبز البرجر الدائري مع شريحة جبن وصوص التارتار.',
     calories: 205,
   },
   {
@@ -1044,6 +1061,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Burger Fingers',
     category: 'sandwiches',
     price: 10,
+    description: 'سندويش يحتوي على أصابع البرجر المقلية والمميزة مع البطاطس والصوصات داخل الخبز.',
     calories: 264,
   },
   {
@@ -1053,6 +1071,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Large Crispy Fries',
     category: 'sandwiches',
     price: 16,
+    description: 'وجبة حجم كبير من البطاطس المقلية المتبلة بطبقة كرسبي مقرمشة من الخارج وطرية من الداخل.',
     calories: 130,
   },
   {
@@ -1062,6 +1081,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Small Fries Plate',
     category: 'sandwiches',
     price: 6,
+    description: 'صحن بحجم فردي صغير يحتوي على أصابع البطاطس المقلية الذهبية المملحة.',
     calories: 85,
   },
   {
@@ -1071,6 +1091,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Large Fries Plate',
     category: 'sandwiches',
     price: 14,
+    description: 'صحن بحجم عائلي كبير مليء بأصابع البطاطس المقلية الطازجة والمقرمشة.',
     calories: 120,
   },
   {
@@ -1080,6 +1101,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Crispy Cheese Fries',
     category: 'sandwiches',
     price: 18,
+    description: 'بطاطس كرسبي مقرمشة ومتبلة مغطاة بطبقة غنية من صوص جبن الشيدر الذائب.',
     calories: 160,
   },
   {
@@ -1089,6 +1111,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Plate Small potato cheese',
     category: 'sandwiches',
     price: 7,
+    description: 'صحن صغير من أصابع البطاطس المقلية يعلوه صوص الجبن السائل الشهي.',
     calories: 120,
   },
   {
@@ -1098,6 +1121,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Large potato with cheese',
     category: 'sandwiches',
     price: 16,
+    description: 'صحن كبير من البطاطس المقلية مغرق بصوص جبن الشيدر السائل الدافئ.',
     calories: 150,
   },
   {
@@ -1107,6 +1131,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Meat kebab',
     category: 'sandwiches',
     price: 10,
+    description: 'أسياخ كباب لحم متبلة بالخلطة الشرقية ومشوية على الفحم، تقدم مع الخبز والسلطة أو داخل السندويش.',
     calories: 125,
   },
   {
@@ -1116,6 +1141,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Chicken kebab',
     category: 'sandwiches',
     price: 10,
+    description: 'أسياخ كباب دجاج طرية مشوية على الفحم بتتبيلة خاصة، تقدم مع الثومية والمخلل والخبز.',
     calories: 132,
   },
   {
@@ -1125,6 +1151,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Meat skewers',
     category: 'sandwiches',
     price: 10,
+    description: 'مكعبات لحم طازجة متبلة ومشوية على الفحم (شقف)، تقدم في سندويش أو مع الخبز، البصل المشوي، والطماطم.',
     calories: 145,
   },
   {
@@ -1134,6 +1161,7 @@ export const MENU_ITEMS: MenuItem[] = [
     nameEn: 'Shish tawook',
     category: 'sandwiches',
     price: 10,
+    description: 'قطع صدور دجاج متبلة بالزبادي والبهارات ومشوية على الفحم، تقدم في سندويش مع صوص الثوم، المخلل، والبطاطس.',
     calories: 133,
   },
 

@@ -1,0 +1,66 @@
+// Auto-generated mapping for Sandwiches (sw-1..28)
+// Matches user-requested direct image URLs from attachment _______________ce6342ae.txt
+
+export const SANDWICHES_IMAGES: Record<string, string> = {
+  "sw-1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ujSjseospz2vbZUvB4zurtqarD6U9ZMk7EREeUdwlA&s=10",
+  "sw-2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzPpXJdp3SrJ8_pw0X1lO8e-jBKoDoW_rpT5NXd70b_g&s=10",
+  "sw-3": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzPpXJdp3SrJ8_pw0X1lO8e-jBKoDoW_rpT5NXd70b_g&s=10",
+  "sw-4": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgj4uaIFvBeKtJWZWE4LZ9atRuud9LFcH0kYJcT4VoWw&s=10",
+  "sw-5": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgLGohIRbujPRPmOtyw3bHxRFXZameQzRPbOfg6yIsw&s=10",
+  "sw-6": "https://kitchen.sayidaty.net/uploads/small/c1/c1e1ae2d48406fe2833ed63a1d32d855_w750_h750.jpg",
+  "sw-7": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5E7UmQvQy4JSERVXZQRUxQxg3jTWDQvRk1jceTDVMYQ&s=10",
+  "sw-8": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVUqc4q_tMW6oEcjUr-q2bggiUBx9h3DShb_YphoGK-Q&s=10",
+  "sw-9": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4dtGU3mLATY5m1ONL1GCMgah7eZzinnb2T8MmqINIYw&s=10",
+  "sw-10": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4dtGU3mLATY5m1ONL1GCMgah7eZzinnb2T8MmqINIYw&s=10",
+  "sw-11": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU6crHHOSQSHbao5XgH8e3oHNGKBE0AUrtiin0qzIlSw&s=10",
+  "sw-12": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4dtGU3mLATY5m1ONL1GCMgah7eZzinnb2T8MmqINIYw&s=10",
+  "sw-13": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxelCOJ4qDNtpGCCD-S3n62cHpUOPaiIodb9BxjAG28g&s=10",
+  "sw-14": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNwCRpZ7qGT1V7h1SCp2IhdxUqA18j0i_huk51ygza4w&s=10",
+  "sw-15": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ENA7yYg4ViwbuQ_hclI8lEEc0VMcHSZTsl6CiKmzBQ&s=10",
+  "sw-16": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQAIfR3Aj-Eq4EaxtfSvcJHHM2VH2AUL1rGbnOtVErg&s=10",
+  "sw-17": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbI6vFuGyo5swF-FWjw7bLXC8ZrkpNjzBHuGEk9CTmsw&s=10",
+  "sw-18": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtmdYTL1oa5X0Tf-0mDZL9HyViGIi9knX_Xd68erv5g&s=10",
+  "sw-19": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDSK6Vu3nwlRBbqvZ5lAeffVBmsz7j1oX5QIS4GHUgmQ&s=10",
+  "sw-20": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp41Mx2LGNIXIQkO5EaPYM5e4MoSpt6regQ7vkV8gk-g&s=10",
+  "sw-21": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1q6Q3QLdVOFEDwO7ah6PvGfbYOuu0LWGkVlkeAFDLwQ&s=10",
+  "sw-22": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDSK6Vu3nwlRBbqvZ5lAeffVBmsz7j1oX5QIS4GHUgmQ&s=10",
+  "sw-23": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlmXKROCbUM9cXRxvAxc5JJt_JYmlQLa_DszmUm2zKtA&s=10",
+  "sw-24": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1q6Q3QLdVOFEDwO7ah6PvGfbYOuu0LWGkVlkeAFDLwQ&s=10",
+  "sw-25": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ENA7yYg4ViwbuQ_hclI8lEEc0VMcHSZTsl6CiKmzBQ&s=10",
+  "sw-26": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQAIfR3Aj-Eq4EaxtfSvcJHHM2VH2AUL1rGbnOtVErg&s=10",
+  "sw-27": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNQo5JT3MTYXtIp0QL_pRkz6CPgEmXnEnoHleK_vdpIQ&s=10",
+  "sw-28": "https://img.ananinja.com/media/ninja-catalog-42/restaurants/5nhpzny8f0skjev1rdo03ppmoqkp/17.jpg?w=1080&q=75"
+};
+
+export const SANDWICHES_EXTERNAL_URLS: Record<string, string> = { ...SANDWICHES_IMAGES };
+
+export const SANDWICHES_DESCRIPTIONS: Record<string, string> = {
+  "sw-1": "قطع دجاج زنجر مقرمشة وحارة ملفوفة في خبز التورتيلا الطازج مع الخس والمايونيز والجبن.",
+  "sw-2": "صدر دجاج فيليه متبل بالبهارات الحارة ومقلي، يقدم في خبز السندويش الطري مع الخس والصوص الحار.",
+  "sw-3": "صدر دجاج فيليه مقلي بتتبيلة كلاسيكية غير حارة، يقدم مع الخس الطازج والمايونيز في خبز طري.",
+  "sw-4": "أصابع دجاج مقلية ومقرمشة ذهبية اللون، محشوة داخل خبز السندويش مع البطاطس والصوص.",
+  "sw-5": "شرائح دجاج كرسبي شديدة القرمشة ملفوفة في خبز الرول (أو الصاج) مع صوص الثوم أو الجبن والمخلل.",
+  "sw-6": "حبات روبيان مقلية ومقرمشة متبلة بعناية، ملفوفة في خبز الرول مع صوص التارتار أو الكوكتيل والخس.",
+  "sw-7": "قطع سمك فيليه طرية ومقلية بدون حسك، ملفوفة في خبز الرول مع الصوص الخاص والخضار.",
+  "sw-8": "شريحة صدر دجاج طازجة مشوية على اللهب، تقدم في خبز البرجر بالسمسم مع الطماطم والخس والجبن.",
+  "sw-9": "شريحة لحم بقري طازجة مشوية غنية بالعصارة، تقدم في خبز البرجر مع شريحة جبن شيدر، مخلل، بصل، وصوص البرجر.",
+  "sw-10": "شريحة لحم غنم محلي طازج مشوية بتتبيلة خاصة، تقدم في خبز البرجر مع الخضار الطازجة والجبن.",
+  "sw-11": "شريحة برجر دجاج مقلية كلاسيكية، تقدم في خبز البرجر مع الخس والمايونيز والكاتشب.",
+  "sw-12": "شريحة برجر لحم كلاسيكية على الصاج، تقدم في خبز البرجر مع الكاتشب والمايونيز والخس.",
+  "sw-13": "قطعة صدر دجاج زنجر سميكة ومقرمشة وحارة، تقدم داخل خبز البرجر الدائري مع الجبن والخس والمايونيز.",
+  "sw-14": "برجر محضر من الدجاج المفروم أو الفيليه الطازج اليومي، يقدم في خبز البرجر مع الجبن والخضار.",
+  "sw-15": "سيخ كباب لحم مفروم مشوي على الفحم، ملفوف في خبز (عربي أو صامولي) مع البقدونس، البصل، الطماطم، والطحينة.",
+  "sw-16": "سيخ كباب دجاج مفروم ومتبل مشوي على الفحم، يقدم في خبز السندويش مع صوص الثوم، المخلل، والبطاطس.",
+  "sw-17": "شريحة فيليه سمك مقرمشة ذهبية، تقدم في خبز البرجر الدائري مع شريحة جبن وصوص التارتار.",
+  "sw-18": "سندويش يحتوي على أصابع البرجر المقلية والمميزة مع البطاطس والصوصات داخل الخبز.",
+  "sw-19": "وجبة حجم كبير من البطاطس المقلية المتبلة بطبقة كرسبي مقرمشة من الخارج وطرية من الداخل.",
+  "sw-20": "صحن بحجم فردي صغير يحتوي على أصابع البطاطس المقلية الذهبية المملحة.",
+  "sw-21": "صحن بحجم عائلي كبير مليء بأصابع البطاطس المقلية الطازجة والمقرمشة.",
+  "sw-22": "بطاطس كرسبي جبن مقرمشة ومتبلة مغطاة بطبقة غنية من صوص جبن الشيدر الذائب.",
+  "sw-23": "صحن صغير من أصابع البطاطس المقلية يعلوه صوص الجبن السائل الشهي.",
+  "sw-24": "صحن كبير من البطاطس المقلية مغرق بصوص جبن الشيدر السائل الدافئ.",
+  "sw-25": "أسياخ كباب لحم متبلة بالخلطة الشرقية ومشوية على الفحم، تقدم مع الخبز والسلطة أو داخل السندويش.",
+  "sw-26": "أسياخ كباب دجاج طرية مشوية على الفحم بتتبيلة خاصة، تقدم مع الثومية والمخلل والخبز.",
+  "sw-27": "مكعبات لحم طازجة متبلة ومشوية على الفحم (شقف)، تقدم في سندويش أو مع الخبز، البصل المشوي، والطماطم.",
+  "sw-28": "قطع صدور دجاج متبلة بالزبادي والبهارات ومشوية على الفحم، تقدم في سندويش مع صوص الثوم، المخلل، والبطاطس."
+};

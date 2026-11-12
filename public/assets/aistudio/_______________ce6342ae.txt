@@ -1,0 +1,32 @@
+
+.
+الروابط	اسم الصنف	م
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ujSjseospz2vbZUvB4zurtqarD6U9ZMk7EREeUdwlA&s=10	زنجر دجاج على خبز ترتيلا	1
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzPpXJdp3SrJ8_pw0X1lO8e-jBKoDoW_rpT5NXd70b_g&s=10	سندويش فيليه حراق	2
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzPpXJdp3SrJ8_pw0X1lO8e-jBKoDoW_rpT5NXd70b_g&s=10	سندويش فيليه عادي	3
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgj4uaIFvBeKtJWZWE4LZ9atRuud9LFcH0kYJcT4VoWw&s=10	سندويش أصابع دجاج	4
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgLGohIRbujPRPmOtyw3bHxRFXZameQzRPbOfg6yIsw&s=10	رول دجاج كرسبي	5
+https://kitchen.sayidaty.net/uploads/small/c1/c1e1ae2d48406fe2833ed63a1d32d855_w750_h750.jpg	رول روبيان	6
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5E7UmQvQy4JSERVXZQRUxQxg3jTWDQvRk1jceTDVMYQ&s=10	رول سمك	7
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVUqc4q_tMW6oEcjUr-q2bggiUBx9h3DShb_YphoGK-Q&s=10	برجر دجاج طازج مشوي	8
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4dtGU3mLATY5m1ONL1GCMgah7eZzinnb2T8MmqINIYw&s=10	برجر لحم بقري طازج مشوي	9
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4dtGU3mLATY5m1ONL1GCMgah7eZzinnb2T8MmqINIYw&s=10	برجر لحم غنم طازج مشوي	10
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU6crHHOSQSHbao5XgH8e3oHNGKBE0AUrtiin0qzIlSw&s=10	برجر دجاج عادي	11
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4dtGU3mLATY5m1ONL1GCMgah7eZzinnb2T8MmqINIYw&s=10	برجر لحم عادي	12
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxelCOJ4qDNtpGCCD-S3n62cHpUOPaiIodb9BxjAG28g&s=10	زنجر دجاج على خبز برجر	13
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNwCRpZ7qGT1V7h1SCp2IhdxUqA18j0i_huk51ygza4w&s=10	برجر دجاج طازج	14
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ENA7yYg4ViwbuQ_hclI8lEEc0VMcHSZTsl6CiKmzBQ&s=10	كباب لحم	15
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQAIfR3Aj-Eq4EaxtfSvcJHHM2VH2AUL1rGbnOtVErg&s=10	كباب دجاج	16
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbI6vFuGyo5swF-FWjw7bLXC8ZrkpNjzBHuGEk9CTmsw&s=10	برجر سمك	17
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmtmdYTL1oa5X0Tf-0mDZL9HyViGIi9knX_Xd68erv5g&s=10	أصابع برجر	18
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDSK6Vu3nwlRBbqvZ5lAeffVBmsz7j1oX5QIS4GHUgmQ&s=10	بطاطس كرسبي كبير	19
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp41Mx2LGNIXIQkO5EaPYM5e4MoSpt6regQ7vkV8gk-g&s=10	صحن بطاطس صغير	20
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1q6Q3QLdVOFEDwO7ah6PvGfbYOuu0LWGkVlkeAFDLwQ&s=10	صحن بطاطس كبير	21
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDSK6Vu3nwlRBbqvZ5lAeffVBmsz7j1oX5QIS4GHUgmQ&s=10	بطاطس كرسبي جبن	22
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlmXKROCbUM9cXRxvAxc5JJt_JYmlQLa_DszmUm2zKtA&s=10	صحن بطاطس صغير جبن	23
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1q6Q3QLdVOFEDwO7ah6PvGfbYOuu0LWGkVlkeAFDLwQ&s=10	صحن بطاطس كبير جبن	24
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ENA7yYg4ViwbuQ_hclI8lEEc0VMcHSZTsl6CiKmzBQ&s=10	كباب لحم	25
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQAIfR3Aj-Eq4EaxtfSvcJHHM2VH2AUL1rGbnOtVErg&s=10	كباب دجاج	26
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNQo5JT3MTYXtIp0QL_pRkz6CPgEmXnEnoHleK_vdpIQ&s=10	أوصال لحم	27
+https://img.ananinja.com/media/ninja-catalog-42/restaurants/5nhpzny8f0skjev1rdo03ppmoqkp/17.jpg?w=1080&q=75	شيش طاووق	28
+

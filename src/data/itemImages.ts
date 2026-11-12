@@ -225,6 +225,14 @@ export function sanitizeDirectImageUrl(rawUrl: string | undefined | null): strin
   const trimmed = rawUrl.trim();
   if (!trimmed) return undefined;
 
+  // Handle your-menu-site placeholder domain by mapping to locally hosted image
+  if (trimmed.includes('your-menu-site.com/images/')) {
+    const filename = trimmed.split('your-menu-site.com/images/')[1];
+    if (filename) {
+      return `/images/sandwiches/${filename}`;
+    }
+  }
+
   // Handle Google search / Google Images redirection URLs
   if (trimmed.includes('google.com')) {
     try {

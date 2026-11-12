@@ -1,5 +1,6 @@
 import { MEALS_AND_SHAWARMA_IMAGES } from './mealsShawarmaImages';
 import { PIZZA_PIES_SKEWERS_IMAGES } from './pizzaPiesSkewersImages';
+import { SANDWICHES_IMAGES } from './sandwichesImages';
 
 /**
  * Custom images provided by user for Broasted, Grilled, Pasta, Hot Drinks, Meals, and Shawarma sections.
@@ -160,4 +161,9 @@ export const USER_PROVIDED_IMAGES: Record<string, string> = {
   // قسم البيتزا والفطائر والمشاوي (61 صنفاً من المرفق الجديد)
   // ==========================================
   ...PIZZA_PIES_SKEWERS_IMAGES,
+
+  // ==========================================
+  // قسم الساندويشات (28 صنفاً من طلب المستخدم)
+  // ==========================================
+  ...SANDWICHES_IMAGES,
 };

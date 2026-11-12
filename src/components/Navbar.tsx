@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Menu, X, MapPin, Search, Sun, Moon, Languages, Sparkles } from 'lucide-react';
+import { Phone, Menu, X, MapPin, Search, Sun, Moon, Languages, Sparkles, Code2, ExternalLink } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantInfo';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -216,6 +216,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
             </div>
             <span className="text-xs text-slate-500 dark:text-neutral-500 font-mono">Ctrl+K</span>
           </button>
+
+          {/* زر خدماتي البرمجية */}
+          <a
+            href="https://amoal2030.github.io/a1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 dark:text-amber-400 border border-amber-500/30 transition-all shadow-xs group cursor-pointer"
+          >
+            <div className="flex items-center gap-2">
+              <Code2 className="w-4 h-4 text-amber-500 group-hover:rotate-12 transition-transform" />
+              <span>صمم بعناية في خدماتي البرمجية</span>
+            </div>
+            <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+          </a>
 
           <div className="pt-2 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs text-slate-500 dark:text-neutral-400">
             <span>{t('nav_call_prompt')}</span>

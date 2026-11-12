@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, MapPin, MessageCircle, Code2, ExternalLink } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantInfo';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -90,16 +90,23 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-slate-200 dark:border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-neutral-500">
+        <div className="pt-6 border-t border-slate-200 dark:border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-neutral-500">
           <div>
             © {new Date().getFullYear()} {isAr ? RESTAURANT_INFO.name : RESTAURANT_INFO.nameEn}. {t('footer_rights')}
           </div>
-          <div className="flex items-center gap-1">
-            <span>{isAr ? 'صُنِع بعناية لخدمة عملاء' : 'Crafted with care for customers of'}</span>
-            <span className="text-slate-700 dark:text-neutral-400 font-medium">
-              {isAr ? 'مشوار الفرسان' : 'Meshwar Al Forsan'}
-            </span>
-          </div>
+          
+          {/* زر خدماتي البرمجية */}
+          <a
+            href="https://amoal2030.github.io/a1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 dark:text-amber-400 border border-amber-500/30 hover:border-amber-500/50 transition-all duration-200 hover:scale-[1.02] shadow-xs group cursor-pointer"
+            title="خدماتي البرمجية"
+          >
+            <Code2 className="w-4 h-4 text-amber-500 transition-transform group-hover:rotate-12" />
+            <span>صمم بعناية في خدماتي البرمجية</span>
+            <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+          </a>
         </div>
       </div>
     </footer>
